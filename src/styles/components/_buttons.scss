@@ -1,0 +1,71 @@
+$block: 'button';
+
+.#{$block} {
+  min-height: 45px;
+  padding: 16px 24px;
+  text-align: center;
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin: 0;
+  font-family: $primary-font-family;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 100px;
+  text-decoration: none !important;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    color: $white;
+  }
+
+  &:focus,
+  &:focus:active {
+    background-color: darken($primary-color, 10%);
+    box-shadow: 0 0 0 4px rgba($primary-color, 0.3);
+    color: $white;
+  }
+
+  &--secoundary {
+    background-color: rgba($secound-color, 0.15);
+    color: $secound-color;
+
+    &:hover {
+      background-color: $secound-color;
+      color: $white;
+    }
+
+    &:focus,
+    &:focus:active {
+      background-color: $secound-color;
+      color: $white;
+      box-shadow: 0 0 0 4px rgba($secound-color, 0.3);
+    }
+  }
+
+  &--outline {
+    background: $white;
+    color: $primary-color;
+
+    &:hover {
+      background: rgba($primary-color, 0.10);
+      color: $primary-color;
+    }
+
+    &:focus {
+      background: $white;
+      color: $primary-color;
+      box-shadow: 0 0 0 4px rgba($primary-color, 0.3);
+    }
+  }
+
+  @include mobile() {
+    min-height: 35px;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+}

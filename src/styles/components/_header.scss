@@ -1,0 +1,35 @@
+$block: 'header';
+
+.#{$block} {
+  &__container {
+    min-height: 350px;
+    padding: 40px;
+    background-color: $white;
+    border-bottom-left-radius: $radius-container + 20;
+    border-bottom-right-radius: $radius-container + 20;
+    // background-image: url('../../assets/images/poke-balls.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 98%;
+    border: solid 1px $gray-light;
+  }
+
+  &__title {
+    max-width: 520px;
+  }
+
+  &__form {
+    max-width: 430px;
+    margin-top: 40px;
+
+    form {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .row {
+      width: 100%;
+    }
+  }
+}

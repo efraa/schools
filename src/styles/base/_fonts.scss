@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Poppins:600,900&display=swap');
+
+* {
+  font-family: $secondary-font-family;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $primary-font-family;
+  font-weight: 900;
+}

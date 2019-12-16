@@ -1,0 +1,13 @@
+$block: 'subtitle';
+
+.#{$block} {
+  font-size: 40px;
+  line-height: 43px;
+  margin: 0;
+  padding: 0;
+
+  @include mobile() {
+    font-size: 26px;
+    line-height: 29px;
+  }
+}

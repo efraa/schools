@@ -1,0 +1,22 @@
+$block: 'title';
+
+.#{$block} {
+  $size: 30px;
+  font-size: $size;
+  line-height: $size + 5;
+  margin-bottom: 16px !important;
+
+  @include media-up($md) {
+    $size: 45px;
+    font-size: $size;
+    line-height: $size + 5;
+    margin-bottom: 16px !important;
+  }
+
+  @include desktop() {
+    $size: 60px;
+    font-size: $size;
+    line-height: $size + 5;
+    margin-bottom: 32px !important;
+  }
+}
