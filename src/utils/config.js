@@ -1,6 +1,8 @@
-const roles = {
-  user: 'user',
-  owner: 'owner',
+const Roles = {
+  School: 'school',
+  Owner: 'owner',
+  Teacher: 'teacher',
+  Student: 'student',
 }
 
 const validations = {
@@ -16,4 +18,4 @@ const validations = {
   locale: 'en',
 }
 
-export { roles, validations }
+export { Roles, validations }
