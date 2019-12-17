@@ -1,11 +1,12 @@
 import { verifyTokenAndGetUser } from '.'
 
-// Actions
-import { setUser } from '../../store/actions/auth'
-import { LOADED, LOGOUT } from '../../store/types'
-
 // Redux
 import store from '../../store'
+
+// Actions
+import { setUser } from '../../store/actions/auth'
+import { types } from '../../store/types'
+const { LOADED, LOGOUT } = types
 
 export const setUserFromToken = async () => {
   try {

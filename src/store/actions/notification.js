@@ -1,4 +1,5 @@
-import { SET_NOTIFICATION, REMOVE_NOTIFICATION } from '../types'
+import { types } from '../types'
+const { SET_NOTIFICATION, REMOVE_NOTIFICATION } = types
 
 export const Notification = (
   msg,

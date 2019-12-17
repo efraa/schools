@@ -5,8 +5,8 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import { Roles } from '../utils/config'
 import ImageTeacher from '../assets/images/signup-teacher.svg'
 
-// Routes of Register
-import { SignupPage } from '../pages/SignupPage'
+// Routes of Signup
+import SignupPage from '../pages/SignupPage'
 
 const SignupRoute = ({ isAuth, path, meta }) =>
   isAuth ? (
@@ -44,3 +44,5 @@ export const SignupRoutes = ({ isAuth }) => (
     </Switch>
   </>
 )
+
+export default SignupRoutes

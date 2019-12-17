@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Validator from 'simple-react-validator'
 import { Link } from 'react-router-dom'
 
-import { AuthContainer } from '../../containers/AuthContainer'
 import { Container } from '../../containers/Container'
 import { Field } from '../../components/Forms/Field'
 import { Button } from '../../components/Forms/Button'
@@ -15,6 +14,8 @@ import { validations } from '../../utils/config'
 
 // Actions
 import { login } from '../../store/actions'
+
+import { AuthContainer } from '../../containers/AuthContainer'
 
 const LoginPage = ({ login }) => {
   const [data, setData] = useState({

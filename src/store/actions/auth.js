@@ -2,8 +2,9 @@ import { verifyTokenAndGetUser } from '../../utils/jwt'
 import { AuthService } from '../../services'
 
 import { Notification } from '../actions'
+import { types } from '../types'
 
-import {
+const {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   REGISTER_FAIL,
@@ -17,7 +18,8 @@ import {
   RESET_PASSWORD_GET_USER_FAIL,
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAIL,
-} from '../types'
+  LOADING,
+} = types
 
 // Set New Notifications
 const notification = (response, type, dispatch) => {
