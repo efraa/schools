@@ -1,60 +1,30 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import Validator from 'simple-react-validator'
+import { useManageForm } from '../../hooks'
+// components
 import { Link } from 'react-router-dom'
-
 import { AuthContainer } from '../../containers/AuthContainer'
 import { Container } from '../../containers/Container'
 import { Field } from '../../components/Forms/Field'
 import { Button } from '../../components/Forms/Button'
 import { Title } from '../../components/Title'
-
-// Utils
-import { validations } from '../../utils/config'
-
 // Actions
 import { signup } from '../../store/actions'
 
 const SignupPage = ({ meta, signup }) => {
-  const [data, setData] = useState({
-    name: '',
-    lastname: '',
-    username: '',
-    email: '',
-    password: '',
-    role: meta.role,
-    codeSchool: '',
-    validator: new Validator(validations),
+  const { onSubmit, onChange, isValid, validator, data } = useManageForm({
+    fields: {
+      name: '',
+      lastname: '',
+      username: '',
+      email: '',
+      password: '',
+      role: meta.role,
+      codeSchool: '',
+    },
+    connect: signup,
   })
-
-  const {
-    name,
-    lastname,
-    username,
-    email,
-    password,
-    role,
-    codeSchool,
-    validator,
-  } = data
-
-  const onChange = e => setData({ ...data, [e.target.name]: e.target.value })
-  const onSubmit = async e => {
-    e.preventDefault()
-    setData({ ...data })
-    if (validator.allValid()) {
-      const user = {
-        name,
-        lastname,
-        username,
-        email,
-        role,
-        codeSchool,
-        password,
-      }
-      await signup(user)
-    } else validator.showMessages()
-  }
+  const { name, lastname, username, email, password, codeSchool } = data
 
   return (
     <AuthContainer img={meta.image}>
@@ -139,7 +109,11 @@ const SignupPage = ({ meta, signup }) => {
               <Link to="/signup"> Privacy Policy.</Link>
             </p>
 
-            <Button text="Sign up" type="submit" />
+            <Button
+              text="Sign up"
+              type="submit"
+              classes={!isValid ? 'disabled' : ''}
+            />
           </div>
         </Container>
       </form>

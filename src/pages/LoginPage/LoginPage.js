@@ -72,7 +72,6 @@ const LoginPage = ({ login }) => {
               text="Log in"
               type="submit"
               classes={!isValid ? 'disabled' : ''}
-              disabled={!isValid}
             />
           </div>
           <div className="col-12 mt-5">
