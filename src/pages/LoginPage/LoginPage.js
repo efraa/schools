@@ -1,43 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import Validator from 'simple-react-validator'
 import { Link } from 'react-router-dom'
-
+import { useManageForm } from '../../hooks'
+// components
+import { AuthContainer } from '../../containers/AuthContainer'
 import { Container } from '../../containers/Container'
 import { Field } from '../../components/Forms/Field'
 import { Button } from '../../components/Forms/Button'
 import { Title } from '../../components/Title'
 import Image from '../../assets/images/login.svg'
-
-// Utils
-import { validations } from '../../utils/config'
-
-// Actions
+// Action
 import { login } from '../../store/actions'
 
-import { AuthContainer } from '../../containers/AuthContainer'
-
 const LoginPage = ({ login }) => {
-  const [data, setData] = useState({
-    emailOrUsername: '',
-    password: '',
-    validator: new Validator(validations),
+  const { onSubmit, onChange, isValid, validator, data } = useManageForm({
+    fields: {
+      emailOrUsername: '',
+      password: '',
+    },
+    connect: login,
   })
-
-  const { emailOrUsername, password, validator } = data
-
-  const onChange = e => setData({ ...data, [e.target.name]: e.target.value })
-  const onSubmit = async e => {
-    e.preventDefault()
-    setData({ ...data })
-    if (validator.allValid()) {
-      const user = {
-        emailOrUsername,
-        password,
-      }
-      await login(user)
-    } else validator.showMessages()
-  }
+  const { emailOrUsername, password } = data
 
   return (
     <AuthContainer img={Image}>
@@ -59,12 +42,12 @@ const LoginPage = ({ login }) => {
           >
             {emailOrUsername.includes('@')
               ? validator.message(
-                  'emailOrUsername',
+                  'Email address',
                   emailOrUsername,
                   'required|email'
                 )
               : validator.message(
-                  'emailOrUsername',
+                  'Email address or Username',
                   emailOrUsername,
                   'required|alpha_num_dash'
                 )}
@@ -85,9 +68,13 @@ const LoginPage = ({ login }) => {
               {' '}
               <b>Forgot password?</b>{' '}
             </Link>
-            <Button text="Log in" type="submit" />
+            <Button
+              text="Log in"
+              type="submit"
+              classes={!isValid ? 'disabled' : ''}
+              disabled={!isValid}
+            />
           </div>
-
           <div className="col-12 mt-5">
             <p>
               Don't have an account?

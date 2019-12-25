@@ -1,14 +1,14 @@
 import { verifyTokenAndGetUser } from '../../utils/jwt'
 import { AuthService } from '../../services'
 
-import { Notification } from '../actions'
+import { Alert } from '../actions'
 import { types } from '../types'
 
 const {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
-  REGISTER_FAIL,
-  REGISTER_SUCCESS,
+  SIGNUP_FAIL,
+  SIGNUP_SUCCESS,
   SET_CURRENT_USER,
   LOGOUT,
   FORGOT_PASSWORD_FAIL,
@@ -18,16 +18,13 @@ const {
   RESET_PASSWORD_GET_USER_FAIL,
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAIL,
-  LOADING,
 } = types
 
-// Set New Notifications
-const notification = (response, type, dispatch) => {
+// Set New Alerts
+const alert = (response, type, dispatch) => {
   const { data, status } = response
   if (data && data.length)
-    data.forEach(notification =>
-      dispatch(Notification(notification.msg, status))
-    )
+    data.forEach(alert => dispatch(Alert(alert.msg, status)))
 
   dispatch({ type })
 }
@@ -36,9 +33,9 @@ const notification = (response, type, dispatch) => {
 export const signup = user => async dispatch => {
   try {
     const res = await AuthService.signup(user)
-    if (res.data.data) dispatch(authUser(res.data.data, REGISTER_SUCCESS))
+    if (res.data) dispatch(authUser(res.data.token, SIGNUP_SUCCESS))
   } catch (err) {
-    notification(err.response, REGISTER_FAIL, dispatch)
+    alert(err.response, SIGNUP_FAIL, dispatch)
   }
 }
 
@@ -48,7 +45,7 @@ export const login = user => async dispatch => {
     const res = await AuthService.auth(user)
     if (res.data.token) dispatch(authUser(res.data.token))
   } catch (err) {
-    notification(err.response, LOGIN_FAIL, dispatch)
+    alert(err.response, LOGIN_FAIL, dispatch)
   }
 }
 
@@ -58,11 +55,11 @@ export const forgotPassword = (email, history) => async dispatch => {
     dispatch({ type: FORGOT_PASSWORD_LOADING })
 
     const res = await AuthService.forgotPassword(email)
-    if (res.data.data) notification(res.data, FORGOT_PASSWORD_SUCCESS, dispatch)
+    if (res.data.data) alert(res.data, FORGOT_PASSWORD_SUCCESS, dispatch)
 
     history.push('/forgot-password/check-your-email')
   } catch (err) {
-    notification(err.response, FORGOT_PASSWORD_FAIL, dispatch)
+    alert(err.response, FORGOT_PASSWORD_FAIL, dispatch)
   }
 }
 
@@ -83,7 +80,7 @@ export const forgotPassIsExpire = (token, history) => async dispatch => {
       })
     }
   } catch (err) {
-    notification(err.response, RESET_PASSWORD_GET_USER_FAIL, dispatch)
+    alert(err.response, RESET_PASSWORD_GET_USER_FAIL, dispatch)
     history.push('/forgot-password')
   }
 }
@@ -92,11 +89,11 @@ export const forgotPassIsExpire = (token, history) => async dispatch => {
 export const resetPassword = (password, token, history) => async dispatch => {
   try {
     const res = await AuthService.resetPassword(password, token)
-    if (res.data.data) notification(res.data, RESET_PASSWORD_SUCCESS, dispatch)
+    if (res.data.data) alert(res.data, RESET_PASSWORD_SUCCESS, dispatch)
 
     history.push('/auth')
   } catch (err) {
-    notification(err.response, RESET_PASSWORD_FAIL, dispatch)
+    alert(err.response, RESET_PASSWORD_FAIL, dispatch)
   }
 }
 
@@ -107,16 +104,16 @@ export const authUser = (token, type = LOGIN_SUCCESS) => async dispatch => {
     token,
   })
   // Decode token and get user info and exp
-  const user = await verifyTokenAndGetUser(token)
+  const decoded = await verifyTokenAndGetUser(token)
   // Set user
-  dispatch(setUser(user))
+  dispatch(setUser(decoded))
 }
 
 // set User
-export const setUser = user => dispatch => {
+export const setUser = data => dispatch => {
   dispatch({
     type: SET_CURRENT_USER,
-    user,
+    user: data.user,
   })
 }
 

@@ -27,7 +27,16 @@ const SignupPage = ({ meta, signup }) => {
     validator: new Validator(validations),
   })
 
-  const { name, lastname, username, email, password, validator } = data
+  const {
+    name,
+    lastname,
+    username,
+    email,
+    password,
+    role,
+    codeSchool,
+    validator,
+  } = data
 
   const onChange = e => setData({ ...data, [e.target.name]: e.target.value })
   const onSubmit = async e => {
@@ -39,6 +48,8 @@ const SignupPage = ({ meta, signup }) => {
         lastname,
         username,
         email,
+        role,
+        codeSchool,
         password,
       }
       await signup(user)
@@ -78,7 +89,7 @@ const SignupPage = ({ meta, signup }) => {
           </Field>
 
           <Field
-            placeholder="Email"
+            placeholder="Email address"
             value={email}
             name="email"
             type="email"
@@ -98,13 +109,17 @@ const SignupPage = ({ meta, signup }) => {
           </Field>
 
           <Field
-            placeholder="Institution code"
+            placeholder="Organization code"
             name="codeSchool"
-            value={password}
+            value={codeSchool}
             onChange={e => onChange(e)}
             wrapper="col-md-6"
           >
-            {validator.message('password', password, 'required|min:6')}
+            {validator.message(
+              'Organization code',
+              codeSchool,
+              'required|alpha_num'
+            )}
           </Field>
 
           <Field
@@ -119,7 +134,7 @@ const SignupPage = ({ meta, signup }) => {
 
           <div className="col-12 d-flex flex-column flex-md-row justify-content-md-between align-items-center mt-4">
             <p>
-              By signing up, you agree to Academ's <br />
+              By signing up, you agree to School's <br />
               <Link to="/signup"> Terms of Service </Link> and
               <Link to="/signup"> Privacy Policy.</Link>
             </p>

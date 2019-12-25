@@ -33,7 +33,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         state: action.msg,
-        user: action.user.user,
+        user: action.user,
         isAuth: true,
         loading: false,
       }

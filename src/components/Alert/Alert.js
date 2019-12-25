@@ -1,26 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const Notification = ({ notifications, selector = 'notification' }) =>
-  notifications && (
+const Alert = ({ alerts, selector = 'alert' }) =>
+  alerts && (
     <div className={`${selector}__container`}>
-      {notifications.map(notification => (
+      {alerts.map(alert => (
         <div
-          key={notification.id}
+          key={alert.id}
           className={
-            notification.notificationType === 200
+            alert.alertType === 200
               ? `${selector} ${selector}--success up`
               : `${selector} ${selector}--warning up`
           }
         >
-          <p>{notification.msg}</p>
+          <p>{alert.msg}</p>
         </div>
       ))}
     </div>
   )
 
 const mapStateToProps = state => ({
-  notifications: state.notification,
+  alerts: state.alert,
 })
 
-export default connect(mapStateToProps)(Notification)
+export default connect(mapStateToProps)(Alert)

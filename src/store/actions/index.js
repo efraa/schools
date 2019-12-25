@@ -1,4 +1,4 @@
-import { Notification } from './notification'
+import { Alert } from './alert'
 
 import {
   signup,
@@ -10,7 +10,7 @@ import {
 } from './auth'
 
 export {
-  Notification,
+  Alert,
   signup,
   login,
   logout,

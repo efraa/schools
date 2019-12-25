@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import Routes from '../../routes'
-import { Notification } from '../../components/Notification'
+import { Alert } from '../../components/Alert'
 
 // Set Authentication
 import { setUserFromToken } from '../../utils/jwt/setUserFromToken'
@@ -18,7 +18,7 @@ const App = memo(() => {
 
   return (
     <Provider store={store}>
-      <Notification />
+      <Alert />
       <Router>
         <>
           <Switch>

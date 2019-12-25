@@ -22,7 +22,7 @@ const LogoutPage = memo(({ logout }) => {
         >
           <div className="logout__container">
             <div className="logout__content">
-              <h2 className="logout__title">Log out of Academ?</h2>
+              <h2 className="logout__title">Log out of Schools?</h2>
               <p className="logout__text">
                 You can always log back in at any time.
               </p>

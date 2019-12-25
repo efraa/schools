@@ -1,4 +1,4 @@
-# Academ 🚀
+# Schools 🚀
 
 ### Requirement 📌
 ***
@@ -6,14 +6,14 @@
 * NodeJS
 
 __This repository depends on the successful installation of the API__ <br>
-__Back end in the repository located__ [AcademAPI.](https://github.com/Efraa/academ-api)
+__Back end in the repository located__ [SchoolsAPI.](https://github.com/Efraa/schools-api)
 ***
 
 ### Development and running the application: 📌
 ***
 
 1. Clone
-2. Move to --> `cd academ`
+2. Move to --> `cd schools`
 3. copy `.default.env` to `.env`
 4. Run `npm install`
 5. Be sure to run the API on your machine.
@@ -31,7 +31,7 @@ __Back end in the repository located__ [AcademAPI.](https://github.com/Efraa/aca
 __Make sure the following values ​​are the same in your API.__
 
 * `TOKEN_EXPIRE` : Copy from your API --> default `72h`
-* `SECRET` : Copy from your API --> example: `secret-academ-api`
+* `SECRET` : Copy from your API --> example: `secret-schools-api`
 
 ### Ready 📌
 ***
