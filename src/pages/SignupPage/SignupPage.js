@@ -29,7 +29,7 @@ const SignupPage = ({ meta, signup }) => {
   return (
     <AuthContainer img={meta.image}>
       <form onSubmit={e => onSubmit(e)}>
-        <Container>
+        <Container fluid>
           <div className="col-12 auth__title">
             <Title text={meta.title} />
           </div>

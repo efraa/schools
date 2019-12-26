@@ -25,7 +25,7 @@ const LoginPage = ({ login }) => {
   return (
     <AuthContainer img={Image}>
       <form onSubmit={e => onSubmit(e)}>
-        <Container>
+        <Container fluid>
           <div className="col-12 auth__title">
             <Title text="Log in to your account." />
           </div>

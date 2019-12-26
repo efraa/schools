@@ -38,7 +38,7 @@ const SignupSchoolPage = ({ signup }) => {
   return (
     <AuthContainer img={Image}>
       <form onSubmit={e => onSubmit(e)}>
-        <Container>
+        <Container fluid>
           <div className="col-12 auth__title">
             <Title text="Sign up as a school account." />
           </div>
