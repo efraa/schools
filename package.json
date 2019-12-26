@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@atlaskit/range": "^3.0.10",
     "axios": "^0.19.0",
     "jsonwebtoken": "^8.5.1",
     "react": "^16.12.0",

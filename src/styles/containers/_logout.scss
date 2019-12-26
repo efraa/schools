@@ -2,7 +2,7 @@ $block: 'logout';
 
 .#{$block} {
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   justify-content: center;
   align-items: center;
   background: $blue-light;

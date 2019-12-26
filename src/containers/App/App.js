@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 
 import Routes from '../../routes'
 import { Alert } from '../../components/Alert'
+import { Header } from '../../components/Header'
 
 // Set Authentication
 import { setUserFromToken } from '../../utils/jwt/setUserFromToken'
@@ -18,6 +19,7 @@ const App = memo(() => {
 
   return (
     <Provider store={store}>
+      <Header />
       <Alert />
       <Router>
         <>

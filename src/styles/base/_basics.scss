@@ -71,3 +71,9 @@ button[disabled],
   pointer-events: none;
   cursor: not-allowed;
 }
+
+strong {
+  font-weight: 600;
+  font-family: $primary-font-family;
+  color: $default-text-color;
+}

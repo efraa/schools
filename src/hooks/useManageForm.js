@@ -35,5 +35,6 @@ export const useManageForm = ({ fields, connect }) => {
     isValid,
     validator: data.validator,
     data,
+    setData,
   }
 }

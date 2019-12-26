@@ -1,39 +1,20 @@
 import React from 'react'
-import { Button } from '../Forms/Button'
-import { Title } from '../Title'
-import { Field } from '../Forms/Field'
+import { Container } from '../../containers/Container'
+import Logo from '../../assets/images/logo.svg'
 
-const Header = ({ setOnBoarding }) => {
-  const onSubmit = async e => {
-    e.preventDefault()
-    console.log(e)
-  }
-
+const Header = () => {
   return (
-    <div className="header__container">
-      <div className="header__title">
-        <Title text="What Pokémon are you looking for?" />
-      </div>
-      <div className="header__form">
-        <form onSubmit={e => onSubmit(e)}>
-          <div className="row no-gutters">
-            <Field
-              placeholder="Search Pokémon..."
-              name="search"
-              wrapper="col-lg"
-            />
-            <div className="col-12 col-lg-4 d-flex justify-content-center align-items-center">
-              <Button text="Search" type="submit" classes="" />
-            </div>
+    <header className="header">
+      <Container>
+        <div className="col">
+          <div className="brand">
+            <img src={Logo} alt="" />
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
+        <div className="col"></div>
+      </Container>
+    </header>
   )
 }
-
-/* const mapStateToProps = state => ({
-  user: state.auth.user,
-}) */
 
 export default Header
