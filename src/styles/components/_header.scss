@@ -32,4 +32,17 @@ $block: 'header';
   .row {
     height: 100%;
   }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+  }
+
+  & .button {
+    min-height: 35px;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
 }

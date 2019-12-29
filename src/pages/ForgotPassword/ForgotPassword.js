@@ -30,11 +30,11 @@ const ForgotPasswordPage = ({
       <form onSubmit={e => onSubmit(e)}>
         <div className="row">
           <div className="col-12 mb-lg-3">
-            <p className="marked">Enter your email or username.</p>
+            <p className="marked">Enter your email address.</p>
           </div>
 
           <Field
-            placeholder="Enter your email address"
+            placeholder="youraccount@smail.com"
             value={email}
             name="email"
             type="email"

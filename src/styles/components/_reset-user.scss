@@ -3,7 +3,6 @@ $block: 'reset-user';
 .#{$block} {
   display: flex;
   align-items: center;
-  margin-top: 32px;
   margin-bottom: 24px;
 
   &__picture {
@@ -18,22 +17,41 @@ $block: 'reset-user';
     background-color: $gray-light;
     border-radius: 100%;
     border: solid 4px $white;
-    box-shadow: 0 0 0 4px $gray-light;
+    box-shadow: 0 0 0 4px $primary-color;
     margin-right: 16px;
+
+    @include mobile() {
+      $size: 40px;
+      width: $size;
+      height: $size;
+      min-width: $size;
+      min-height: $size;
+      box-shadow: 0 0 0 3px $primary-color;
+      border-width: 2px;
+    }
   }
 
   &__name {
     padding: 0;
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
+
+    @include mobile() {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
   }
 
   &__username {
     color: $primary-color;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 14px;
     font-family: $primary-font-family;
     padding: 0;
     margin: 0;
+
+    @include mobile() {
+      font-size: 12px;
+    }
   }
 }

@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import Validator from 'simple-react-validator'
-
-import { ResetPassword } from '../../containers/ResetPassword'
-import { Container } from '../../containers/Container'
+import { useManageForm } from '../../hooks'
+import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
 import { Field } from '../../components/Forms/Field'
 import { Button } from '../../components/Forms/Button'
-import { Subtitle } from '../../components/Subtitle'
-
-// Utils
-import { validations } from '../../utils/config'
-
+import { Spinner } from '../../components/Spinner'
 // Actions
 import { forgotPassIsExpire, resetPassword } from '../../store/actions'
 
@@ -25,58 +19,42 @@ const ResetPasswordPage = ({
     forgotPassIsExpire(match.params.token, history)
   }, [forgotPassIsExpire, match, history])
 
-  const [data, setData] = useState({
-    password: '',
-    newPassword: '',
-    validator: new Validator(validations),
+  const { onSubmit, onChange, isValid, validator, data } = useManageForm({
+    fields: {
+      password: '',
+      newPassword: '',
+    },
+    connect: resetPassword,
+    moreData: {
+      token: match.params.token,
+      history,
+    },
   })
+  const { password, newPassword } = data
+  const { resetPassword: resetPasswordData } = auth
+  const user = resetPasswordData ? resetPasswordData.user : null
 
-  const {
-    password,
-    newPassword,
-    validator,
-  } = data
-
-  const onChange = e => setData({ ...data, [e.target.name]: e.target.value })
-
-  const onSubmit = async e => {
-    e.preventDefault()
-    setData({ ...data })
-
-    if (validator.allValid()) {
-      if (password === newPassword) {
-        await resetPassword({ password }, match.params.token, history)
-      }
-    } else validator.showMessages()
-  }
-  
-  return auth && !auth.loading && (
-    <ResetPassword>
+  return !user ? (
+    <Spinner />
+  ) : (
+    <ForgotPassContainer title="Reset your password.">
       <form onSubmit={e => onSubmit(e)}>
-        <Container rowClasses="no-gutters">
+        <div className="row">
           <div className="col-12">
-            <Subtitle text="Reset your password." />
-
-            {auth && !auth.loading && auth.resetPassword ? (
-              <div className="reset-user">
-                <div
-                  styles={`background-image: url('${auth.resetPassword.user.picture}');`}
-                  className="reset-user__picture"   
-                />
-                <div className="reset-user__content">
-                  <h4 className="reset-user__name">
-                    {auth.resetPassword.user.name}
-                    {' '}
-                    {auth.resetPassword.user.lastname}
-                  </h4>
-                  <p className="reset-user__username">
-                    @{auth.resetPassword.user.username}
-                  </p>
-                </div>
+            <div className="reset-user">
+              <div
+                styles={`background-image: url('${user.picture}');`}
+                className="reset-user__picture"
+              />
+              <div className="reset-user__content">
+                <h4 className="reset-user__name">
+                  {user.name} {user.lastname}
+                </h4>
+                <p className="reset-user__username">@{user.username}</p>
               </div>
-            ) : ''}
+            </div>
 
-            <p className="mb-0 pb-0">
+            <p className="mb-2 pb-0">
               Strong passwords include numbers, letters, and punctuation marks.
             </p>
           </div>
@@ -103,13 +81,14 @@ const ResetPasswordPage = ({
 
           <div className="col-12 d-flex justify-content-end mt-4">
             <Button
-              text="Reset Password"
+              text="Reset"
               type="submit"
+              classes={!isValid ? 'disabled' : ''}
             />
           </div>
-        </Container>
+        </div>
       </form>
-    </ResetPassword>
+    </ForgotPassContainer>
   )
 }
 
@@ -117,7 +96,6 @@ const mapStateToProps = state => ({
   auth: state.auth,
 })
 
-export default connect(
-  mapStateToProps,
-  { forgotPassIsExpire, resetPassword }
-)(ResetPasswordPage)
+export default connect(mapStateToProps, { forgotPassIsExpire, resetPassword })(
+  ResetPasswordPage
+)

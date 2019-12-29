@@ -1,16 +1,15 @@
-import React, { useEffect, memo } from 'react'
+import React, { useEffect, memo, Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import Routes from '../../routes'
-import { Alert } from '../../components/Alert'
-import { Header } from '../../components/Header'
-
-// Set Authentication
 import { setUserFromToken } from '../../utils/jwt/setUserFromToken'
-
-// Redux
 import store from '../../store'
+
+// Components
+import { Spinner } from '../../components/Spinner'
+const Header = lazy(() => import('../../components/Header'))
+const Alert = lazy(() => import('../../components/Alert'))
 
 const App = memo(() => {
   useEffect(() => {
@@ -19,15 +18,16 @@ const App = memo(() => {
 
   return (
     <Provider store={store}>
-      <Header />
-      <Alert />
-      <Router>
-        <>
+      <Suspense fallback={<Spinner />}>
+        <Alert />
+        <Router>
+          <Header />
+
           <Switch>
             <Route component={Routes} />
           </Switch>
-        </>
-      </Router>
+        </Router>
+      </Suspense>
     </Provider>
   )
 })

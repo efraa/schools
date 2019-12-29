@@ -66,16 +66,10 @@ export const forgotPassword = (email, history) => async dispatch => {
 export const forgotPassIsExpire = (token, history) => async dispatch => {
   try {
     const res = await AuthService.forgotPassIsExpire(token)
-    if (res.data.data) {
-      const { name, lastname, username, picture } = res.data.data
+    if (res.data) {
       dispatch({
         type: RESET_PASSWORD_GET_USER_SUCCESS,
-        user: {
-          name,
-          lastname,
-          username,
-          picture,
-        },
+        user: res.data,
       })
     }
   } catch (err) {
@@ -85,10 +79,13 @@ export const forgotPassIsExpire = (token, history) => async dispatch => {
 }
 
 // Reset Password
-export const resetPassword = (password, token, history) => async dispatch => {
+export const resetPassword = (
+  password,
+  { token, history }
+) => async dispatch => {
   try {
     const res = await AuthService.resetPassword(password, token)
-    if (res.data.data) alert(res.data, RESET_PASSWORD_SUCCESS, dispatch)
+    if (res.data) alert(res, RESET_PASSWORD_SUCCESS, dispatch)
 
     history.push('/auth')
   } catch (err) {
