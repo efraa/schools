@@ -17,6 +17,9 @@ $block: 'button';
   cursor: pointer;
   border-radius: 100px;
   text-decoration: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: darken($primary-color, 10%);
@@ -31,19 +34,19 @@ $block: 'button';
   }
 
   &--secoundary {
-    background-color: rgba($secound-color, 0.15);
-    color: $secound-color;
+    background-color: rgba($primary-color, 0.15);
+    color: $primary-color;
 
     &:hover {
-      background-color: $secound-color;
+      background-color: $primary-color;
       color: $white;
     }
 
     &:focus,
     &:focus:active {
-      background-color: $secound-color;
+      background-color: $primary-color;
       color: $white;
-      box-shadow: 0 0 0 4px rgba($secound-color, 0.3);
+      box-shadow: 0 0 0 4px rgba($primary-color, 0.3);
     }
   }
 

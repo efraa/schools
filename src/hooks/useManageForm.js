@@ -3,7 +3,7 @@ import Validator from 'simple-react-validator'
 
 import { validations } from '../utils/config'
 
-export const useManageForm = ({ fields, connect }) => {
+export const useManageForm = ({ fields, connect, moreData }) => {
   const [isValid, setValid] = useState(false)
   const [data, setData] = useState({
     ...fields,
@@ -13,10 +13,13 @@ export const useManageForm = ({ fields, connect }) => {
   const onSubmit = async e => {
     e.preventDefault()
     if (isValid)
-      await connect({
-        ...data,
-        validator: undefined,
-      })
+      await connect(
+        {
+          ...data,
+          validator: undefined,
+        },
+        moreData
+      )
   }
 
   useEffect(() => {

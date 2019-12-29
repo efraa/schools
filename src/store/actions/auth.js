@@ -53,9 +53,8 @@ export const login = user => async dispatch => {
 export const forgotPassword = (email, history) => async dispatch => {
   try {
     dispatch({ type: FORGOT_PASSWORD_LOADING })
-
     const res = await AuthService.forgotPassword(email)
-    if (res.data.data) alert(res.data, FORGOT_PASSWORD_SUCCESS, dispatch)
+    if (res.data) alert(res, FORGOT_PASSWORD_SUCCESS, dispatch)
 
     history.push('/forgot-password/check-your-email')
   } catch (err) {
