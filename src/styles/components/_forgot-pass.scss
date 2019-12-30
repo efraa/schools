@@ -6,6 +6,7 @@ $block: 'forgot-pass';
   border: solid 1px rgba($primary-color, 0.10);
   padding: 44px;
   min-height: 440px;
+  border-radius: 4px;
 
   @include mobile() {
     min-height: auto;

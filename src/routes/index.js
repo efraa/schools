@@ -15,6 +15,7 @@ const SignupSchoolPage = lazy(() => import('../pages/School/SignupSchoolPage'))
 const ForgotPassword = lazy(() => import('../pages/ForgotPassword'))
 const CheckEmail = lazy(() => import('../pages/CheckEmail'))
 const ResetPassword = lazy(() => import('../pages/ResetPassword'))
+const SignupLanding = lazy(() => import('../pages/SignupLanding'))
 
 const Routes = ({ isAuth, loading }) =>
   !loading && (
@@ -41,6 +42,7 @@ const Routes = ({ isAuth, loading }) =>
           path="/reset-password/:token"
           component={ResetPassword}
         />
+        <PublicRoute isAuth={isAuth} path="/signup" component={SignupLanding} />
         <PrivateRoute isAuth={isAuth} path="/home" component={HomePage} />
         <PrivateRoute isAuth={isAuth} path="/logout" component={LogoutPage} />
 

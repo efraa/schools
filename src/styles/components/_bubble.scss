@@ -1,0 +1,67 @@
+$block: 'bubble';
+
+.#{$block} {
+  $size: 180px;
+  display: block;
+  background: $white;
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  box-shadow: 6px 6px rgba($primary-color, 0.09);
+  border: solid 1px rgba($primary-color, 0.09);
+  position: relative;
+
+  &:hover {
+    transform: translateY(-16px);
+    border-color: $primary-color;
+  }
+
+  &--school {
+    margin-top: -70px;
+    position: absolute;
+
+    @include desktop() {
+      margin-left: 20%;
+    }
+
+    @include desktop-plus() {
+      margin-left: 28%;
+    }
+  }
+
+  &--teacher {
+    margin-top: 90px;
+    position: absolute;
+
+    @include desktop() {
+      margin-left: -24px;
+    }
+
+    @include desktop-plus() {
+      margin-left: 8%;
+    }
+  }
+
+  &--student {
+    margin-top: 150px;
+    position: absolute;
+    right: 0;
+
+    @include desktop() {
+      // margin-left: 80%;
+    }
+
+    @include desktop-plus() {
+      // margin-left: 0%;
+    }
+  }
+
+  &--small {
+    $size: 140px;
+    width: $size;
+    height: $size;
+  }
+}

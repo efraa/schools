@@ -44,7 +44,7 @@ const ForgotPasswordPage = ({
           </Field>
 
           <div className="col-12 d-flex justify-content-end mt-5">
-            <Link className="button button--secoundary mr-3" to="/auth">
+            <Link className="button button--outline mr-3" to="/auth">
               Cancel
             </Link>
             <Button
