@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
+import { TitleNode } from './Style'
 
 export const Title = memo(({ text, className }) => (
-  <h2 className={`title ${className ? className : ''}`}>{text}</h2>
+  <TitleNode className={className && className}>{text}</TitleNode>
 ))

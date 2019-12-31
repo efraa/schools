@@ -46,35 +46,6 @@ $block: 'signup';
     }
   }
 
-  &__bubbles {
-    min-height: 500px;
-    width: 65%;
-    background-image: url('../../assets/images/schools.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    display: flex;
-    justify-content: center;
-    position: relative;
-
-    @include mobile() {
-      width: 100%;
-      background-position: center;
-    }
-
-
-    &-wrapper {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: -350px;
-
-      @include mobile() {
-        margin-top: 60px;
-        justify-content: center;
-      }
-    }
-  }
-
   &__card {
     background: $white;
     border: solid 1px rgba($primary-color, 0.2);

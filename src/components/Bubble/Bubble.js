@@ -1,12 +1,10 @@
 import React, { memo } from 'react'
-import { Link } from 'react-router-dom'
+import { BubbleItem } from './Style'
 
 export const Bubble = memo(({ image, small, to }) => (
-  <Link
+  <BubbleItem
     to={to}
-    style={{
-      backgroundImage: `url(${image})`,
-    }}
-    className={`bubble${small ? ' bubble--small' : ''}`}
-  ></Link>
+    image={image}
+    small={small && small.toString()}
+  ></BubbleItem>
 ))

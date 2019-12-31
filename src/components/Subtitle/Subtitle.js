@@ -1,3 +1,6 @@
 import React, { memo } from 'react'
+import { SubtitleNode } from './Style'
 
-export const Subtitle = memo(({ text }) => <h3 className="subtitle">{text}</h3>)
+export const Subtitle = memo(({ text, className }) => (
+  <SubtitleNode className={className && className}>{text}</SubtitleNode>
+))

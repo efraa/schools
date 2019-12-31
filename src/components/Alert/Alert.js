@@ -1,22 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const Alert = ({ alerts, selector = 'alert' }) =>
-  alerts && (
-    <div className={`${selector}__container`}>
+import { AlertContainer, AlertCard } from './Style'
+
+const Alert = ({ alerts }) =>
+  alerts[0] ? (
+    <AlertContainer>
       {alerts.map(alert => (
-        <div
+        <AlertCard
           key={alert.id}
-          className={
-            alert.alertType === 200
-              ? `${selector} ${selector}--success up`
-              : `${selector} ${selector}--warning up`
-          }
+          success={alert.alertType === 200 ? true : false}
         >
-          <p>{alert.msg}</p>
-        </div>
+          {alert.msg}
+        </AlertCard>
       ))}
-    </div>
+    </AlertContainer>
+  ) : (
+    false
   )
 
 const mapStateToProps = state => ({

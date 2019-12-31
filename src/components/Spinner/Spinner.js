@@ -1,7 +1,8 @@
 import React, { memo } from 'react'
+import { SpinnerWrapper, SpinnerNode } from './Style'
 
 export const Spinner = memo(() => (
-  <div className="loading__wrapper">
-    <div className="loading"></div>
-  </div>
+  <SpinnerWrapper>
+    <SpinnerNode />
+  </SpinnerWrapper>
 ))

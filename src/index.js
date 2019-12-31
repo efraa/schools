@@ -5,7 +5,7 @@ import App from './containers/App'
 import * as serviceWorker from './serviceWorker'
 
 // Styles
-import './styles/index.scss'
+import './styles/style.scss'
 
 render(<App />, document.getElementById('app'))
 serviceWorker.unregister()

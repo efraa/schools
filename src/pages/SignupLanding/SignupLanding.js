@@ -8,6 +8,15 @@ import SchoolImage from '../../assets/images/bubble-school.svg'
 import TeacherImage from '../../assets/images/bubble-teacher.svg'
 import StudentImage from '../../assets/images/bubble-student.svg'
 
+// Styles
+import {
+  BubbleSchool,
+  BubbleTeacher,
+  BubbleStudent,
+  BubbleContainer,
+  BubbleWrapper,
+} from './Style'
+
 const SignupLanding = () => (
   <div className="signup fade">
     <Container>
@@ -34,19 +43,19 @@ const SignupLanding = () => (
         </div>
       </div>
       <div className="col-12">
-        <div className="signup__bubbles-wrapper">
-          <div className="signup__bubbles">
-            <div className="bubble--teacher">
+        <BubbleWrapper>
+          <BubbleContainer>
+            <BubbleTeacher>
               <Bubble to="/signup-teacher" image={TeacherImage} small />
-            </div>
-            <div className="bubble--school">
+            </BubbleTeacher>
+            <BubbleSchool>
               <Bubble to="/signup-school" image={SchoolImage} />
-            </div>
-            <div className="bubble--student">
+            </BubbleSchool>
+            <BubbleStudent>
               <Bubble to="/signup-student" image={StudentImage} small />
-            </div>
-          </div>
-        </div>
+            </BubbleStudent>
+          </BubbleContainer>
+        </BubbleWrapper>
       </div>
     </Container>
   </div>

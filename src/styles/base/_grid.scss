@@ -1,7 +1,0 @@
-$block: 'container';
-
-.#{$block} {
-  @include desktop-plus() {
-    max-width: 1200px;
-  }
-}

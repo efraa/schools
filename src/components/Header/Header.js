@@ -2,29 +2,40 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Container } from '../../containers/Container'
 import Logo from '../../assets/images/logo.svg'
-import { NavLink, Link } from 'react-router-dom'
+
+import {
+  HeaderNode,
+  HeaderWrapper,
+  HeaderBrand,
+  HeaderContent,
+  HeaderButton,
+} from './Style'
 
 const PublicHeader = () => (
   <Container>
     <div className="col">
-      <Link to="/home" className="brand">
+      <HeaderBrand to="/home">
         <img src={Logo} alt="" />
-      </Link>
+      </HeaderBrand>
     </div>
     <div className="col">
-      <div className="header__content">
-        <NavLink
+      <HeaderContent>
+        <HeaderButton
           to="/auth"
           className="button button--outline"
           activeClassName="d-none"
         >
           Log In
-        </NavLink>
+        </HeaderButton>
 
-        <NavLink to="/signup" className="button ml-2" activeClassName="d-none">
+        <HeaderButton
+          to="/signup"
+          className="button ml-2"
+          activeClassName="d-none"
+        >
           Get Started
-        </NavLink>
-      </div>
+        </HeaderButton>
+      </HeaderContent>
     </div>
   </Container>
 )
@@ -32,9 +43,9 @@ const PublicHeader = () => (
 const PrivateHeader = () => (
   <Container>
     <div className="col">
-      <Link to="/home" className="brand">
+      <HeaderBrand to="/home">
         <img src={Logo} alt="" />
-      </Link>
+      </HeaderBrand>
     </div>
     <div className="col"></div>
   </Container>
@@ -42,11 +53,9 @@ const PrivateHeader = () => (
 
 const Header = ({ isAuth }) => {
   return (
-    <div className="header__wrapper">
-      <header className="header fade">
-        {isAuth ? <PrivateHeader /> : <PublicHeader />}
-      </header>
-    </div>
+    <HeaderWrapper>
+      <HeaderNode>{isAuth ? <PrivateHeader /> : <PublicHeader />}</HeaderNode>
+    </HeaderWrapper>
   )
 }
 
