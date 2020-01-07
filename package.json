@@ -43,34 +43,14 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.stories.{js,jsx,ts,tsx}",
-      "!src/**/index.{js,jsx,ts,tsx}",
-      "!**/serviceWorker.js",
-      "!**/setupTests.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 70,
-        "functions": 80,
-        "lines": 80,
-        "statements": 80
-      }
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.7.5",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
     "@types/jest": "^24.0.23",
     "@types/react-router-dom": "^4.3.5",
     "babel-loader": "^8.0.6",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "node-sass": "^4.13.0",
     "prettier": "^1.19.1"
   },
   "repository": {
