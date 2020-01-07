@@ -1,11 +1,10 @@
+import { Theme, Color } from '../../styles'
 import styled, { keyframes } from 'styled-components'
-import color from 'color'
-import { Theme } from '../../styles'
 
 export const SpinnerWrapper = styled.div`
   position: absolute;
   z-index: 1;
-  background: ${color(Theme.colors.white)
+  background: ${Color(Theme.colors.white)
     .alpha(0.5)
     .string()};
   width: 100%;

@@ -1,7 +1,6 @@
-import styled from 'styled-components'
-import { Media, Theme } from '../../styles'
+import { Styled, Theme, Media } from '../../styles'
 
-export const TitleNode = styled.h1`
+export const TitleNode = Styled.h1`
   font-size: 30px;
   line-height: 35px;
   margin-bottom: 16px !important;

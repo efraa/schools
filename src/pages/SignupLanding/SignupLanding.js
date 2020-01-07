@@ -15,32 +15,39 @@ import {
   BubbleStudent,
   BubbleContainer,
   BubbleWrapper,
+  SignupHead,
+  SignupSubTitle,
+  SignupText,
+  SignupCard,
+  SignupCardTitle,
+  SignupCardText,
+  Signup,
 } from './Style'
 
 const SignupLanding = () => (
-  <div className="signup fade">
+  <Signup>
     <Container>
       <div className="col-12">
-        <div className="signup__head">
+        <SignupHead>
           <Title text="Let’s create your account." />
 
-          <h4 className="signup__subtitle">
+          <SignupSubTitle>
             We're the platform that works for your school.
-          </h4>
+          </SignupSubTitle>
 
-          <p className="signup__text">
+          <SignupText>
             Register your school for free and enjoy our platform for a semester
             of classes, <span> without commitments.</span>
-          </p>
+          </SignupText>
 
-          <div className="signup__card">
-            <p className="signup__card-title">Get Started</p>
+          <SignupCard>
+            <SignupCardTitle>Get Started</SignupCardTitle>
 
-            <p className="signup__card-text">
+            <SignupCardText>
               Click on the bubble of the role you play in your organization.
-            </p>
-          </div>
-        </div>
+            </SignupCardText>
+          </SignupCard>
+        </SignupHead>
       </div>
       <div className="col-12">
         <BubbleWrapper>
@@ -58,7 +65,7 @@ const SignupLanding = () => (
         </BubbleWrapper>
       </div>
     </Container>
-  </div>
+  </Signup>
 )
 
 export default SignupLanding

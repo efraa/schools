@@ -11,6 +11,9 @@ import { Title } from '../../components/Title'
 import Image from '../../assets/images/login.svg'
 // Action
 import { login } from '../../store/actions'
+// Styles
+import { Common } from '../../styles'
+import { LoginTitle } from './Style'
 
 const LoginPage = ({ login }) => {
   const { onSubmit, onChange, isValid, validator, data } = useManageForm({
@@ -26,12 +29,12 @@ const LoginPage = ({ login }) => {
     <AuthContainer img={Image}>
       <form onSubmit={e => onSubmit(e)}>
         <Container fluid>
-          <div className="col-12 auth__title">
+          <LoginTitle className="col-12">
             <Title text="Log in to your account." />
-          </div>
+          </LoginTitle>
 
           <div className="col-12 mb-lg-3">
-            <p className="marked">Or use your email account.</p>
+            <Common.Marked>Or use your email account.</Common.Marked>
           </div>
 
           <Field
@@ -68,11 +71,9 @@ const LoginPage = ({ login }) => {
               {' '}
               <b>Forgot password?</b>{' '}
             </Link>
-            <Button
-              text="Log in"
-              type="submit"
-              classes={!isValid ? 'disabled' : ''}
-            />
+            <Button type="submit" disabled={!isValid}>
+              Log in
+            </Button>
           </div>
           <div className="col-12 mt-5">
             <p>

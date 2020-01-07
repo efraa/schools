@@ -11,18 +11,6 @@ const colors = {
   grayLight: '#F9F9FB',
 }
 
-const fonts = {
-  primary: "'Poppins', sans-serif",
-  secondary: "'Lato', sans-serif",
-}
-
-const breakpoints = {
-  sm: '576px',
-  md: '768px',
-  lg: '992px',
-  xl: '1200px',
-}
-
 export const Theme = {
   colors: {
     ...colors,
@@ -30,6 +18,14 @@ export const Theme = {
     secound: colors.blueDark,
     defaultTextColor: colors.black,
   },
-  fonts,
-  breakpoints,
+  fonts: {
+    primary: "'Poppins', sans-serif",
+    secondary: "'Lato', sans-serif",
+  },
+  breakpoints: {
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+  },
 }

@@ -1,7 +1,6 @@
-import styled from 'styled-components'
-import { Media } from '../../styles'
+import { Styled, Media } from '../../styles'
 
-export const SubtitleNode = styled.h3`
+export const SubtitleNode = Styled.h3`
   font-size: 40px;
   line-height: 43px;
   margin: 0;

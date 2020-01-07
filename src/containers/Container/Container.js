@@ -1,7 +1,11 @@
 import React, { memo } from 'react'
 
-export const Container = memo(({ children, rowClasses, fluid }) => (
+export const Container = memo(({ children, rowClasses, fluid, node }) => (
   <div className={!fluid ? 'container' : 'wrapper-fluid'}>
-    <div className={rowClasses ? `row ${rowClasses}` : 'row'}>{children}</div>
+    {node ? (
+      children
+    ) : (
+      <div className={rowClasses ? `row ${rowClasses}` : 'row'}>{children}</div>
+    )}
   </div>
 ))

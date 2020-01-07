@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormField, Control } from './Style'
 
 export const Field = ({
   placeholder,
@@ -10,20 +11,22 @@ export const Field = ({
   value,
   name,
   children,
-}) => (
-  <div className={`col-12 ${wrapper || ''}`}>
-    <div className="form__field">
-      {label ? <label>{label}</label> : ''}
-      <input
-        type={type || 'text'}
-        className="form__control"
-        placeholder={placeholder || ''}
-        onChange={onChange}
-        onClick={onClick}
-        value={value}
-        name={name}
-      ></input>
-      {children}
+}) => {
+  const props = {
+    placeholder,
+    type,
+    onChange,
+    onClick,
+    value,
+    name,
+  }
+  return (
+    <div className={`col-12 ${wrapper || ''}`}>
+      <FormField>
+        {label ? <label>{label}</label> : ''}
+        <Control {...props} />
+        {children}
+      </FormField>
     </div>
-  </div>
-)
+  )
+}

@@ -1,15 +1,18 @@
 import React, { memo } from 'react'
+// Styles
+import { Common } from '../../styles'
 import { Container } from '../Container'
+const { Wrapper, ForgotPassNode, Title } = Common.ForgotPassStyle
 
 export const ForgotPassContainer = memo(({ children, title }) => (
-  <div className="forgot-pass__wrapper fade">
+  <Wrapper>
     <Container rowClasses="d-flex justify-content-center">
       <div className="col-12 col-md-8">
-        <div className="forgot-pass">
-          <h1 className="forgot-pass__title">{title}</h1>
+        <ForgotPassNode>
+          <Title>{title}</Title>
           {children}
-        </div>
+        </ForgotPassNode>
       </div>
     </Container>
-  </div>
+  </Wrapper>
 ))

@@ -9,6 +9,8 @@ import { Button } from '../../components/Forms/Button'
 // Actions
 import { forgotPassword } from '../../store/actions'
 import { Link } from 'react-router-dom'
+// Styles
+import { Common } from '../../styles'
 
 const ForgotPasswordPage = ({
   forgotPassword,
@@ -30,7 +32,7 @@ const ForgotPasswordPage = ({
       <form onSubmit={e => onSubmit(e)}>
         <div className="row">
           <div className="col-12 mb-lg-3">
-            <p className="marked">Enter your email address.</p>
+            <Common.Marked>Enter your email address.</Common.Marked>
           </div>
 
           <Field
@@ -44,14 +46,12 @@ const ForgotPasswordPage = ({
           </Field>
 
           <div className="col-12 d-flex justify-content-end mt-5">
-            <Link className="button button--outline mr-3" to="/auth">
+            <Button as={Link} to="/auth" outline="true" className="mr-3">
               Cancel
-            </Link>
-            <Button
-              text="Find account"
-              type="submit"
-              classes={!isValid ? 'disabled' : ''}
-            />
+            </Button>
+            <Button type="submit" disabled={!isValid}>
+              Find account
+            </Button>
           </div>
         </div>
       </form>

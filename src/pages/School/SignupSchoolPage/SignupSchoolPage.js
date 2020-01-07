@@ -112,11 +112,9 @@ const SignupSchoolPage = ({ signup }) => {
               <Link to="/signup"> Privacy Policy.</Link>
             </p>
 
-            <Button
-              text="Sign up"
-              type="submit"
-              classes={!isValid ? 'disabled' : ''}
-            />
+            <Button type="submit" disabled={!isValid}>
+              Sign up
+            </Button>
           </div>
         </Container>
       </form>

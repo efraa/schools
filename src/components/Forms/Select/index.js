@@ -1,1 +1,0 @@
-export { PokeSelect } from './Select'

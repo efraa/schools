@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { useManageForm } from '../../hooks'
+// Components
 import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
 import { Field } from '../../components/Forms/Field'
 import { Button } from '../../components/Forms/Button'
 import { Spinner } from '../../components/Spinner'
+import { User, Picture, Name, UserName, Text } from './Style'
 // Actions
 import { forgotPassIsExpire, resetPassword } from '../../store/actions'
 
@@ -41,22 +43,19 @@ const ResetPasswordPage = ({
       <form onSubmit={e => onSubmit(e)}>
         <div className="row">
           <div className="col-12">
-            <div className="reset-user">
-              <div
-                styles={`background-image: url('${user.picture}');`}
-                className="reset-user__picture"
-              />
-              <div className="reset-user__content">
-                <h4 className="reset-user__name">
+            <User>
+              <Picture image={user.picture} />
+              <div>
+                <Name>
                   {user.name} {user.lastname}
-                </h4>
-                <p className="reset-user__username">@{user.username}</p>
+                </Name>
+                <UserName>@{user.username}</UserName>
               </div>
-            </div>
+            </User>
 
-            <p className="mb-2 pb-0">
+            <Text>
               Strong passwords include numbers, letters, and punctuation marks.
-            </p>
+            </Text>
           </div>
 
           <Field
@@ -80,11 +79,9 @@ const ResetPasswordPage = ({
           </Field>
 
           <div className="col-12 d-flex justify-content-end mt-4">
-            <Button
-              text="Reset"
-              type="submit"
-              classes={!isValid ? 'disabled' : ''}
-            />
+            <Button type="submit" disabled={!isValid}>
+              Reset
+            </Button>
           </div>
         </div>
       </form>

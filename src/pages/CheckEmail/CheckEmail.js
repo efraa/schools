@@ -1,30 +1,30 @@
 import React, { memo } from 'react'
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+// Components
 import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
+import { Text, Small, Button } from './Style'
 
 const CheckEmail = memo(({ emailSended }) =>
   !emailSended ? (
     <Redirect to="/forgot-password" />
   ) : (
     <ForgotPassContainer title="Check your email.">
-      <p className="check-email__text mt-4">
-        We've sent an email to reset your password.
-      </p>
-      <p className="check-email__text mb-4">
+      <Text className="mt-4">We've sent an email to reset your password.</Text>
+      <Text className="mb-4">
         If you don't see the email, check other places it might be, like your
         junk, spam, etc.
-      </p>
+      </Text>
 
-      <p className="check-email__small mb-4">
+      <Small>
         <small>
           If you've already read this message <br /> you can close this window.
         </small>
-      </p>
+      </Small>
 
-      <Link to="/forgot-password" className="check-email__link">
+      <Button to="/forgot-password">
         <b> I didn't receive the email, try again. </b>
-      </Link>
+      </Button>
     </ForgotPassContainer>
   )
 )

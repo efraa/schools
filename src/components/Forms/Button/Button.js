@@ -1,12 +1,4 @@
 import React, { memo } from 'react'
+import { ButtonNode } from './Style'
 
-export const Button = memo(({ props, type, onClick, text, classes }) => (
-  <button
-    {...props}
-    type={type || 'button'}
-    className={classes ? `button ${classes}` : 'button'}
-    onClick={onClick}
-  >
-    {text}
-  </button>
-))
+export const Button = memo(props => <ButtonNode {...props}></ButtonNode>)

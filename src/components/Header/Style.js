@@ -1,11 +1,9 @@
-import styled from 'styled-components'
-import { Theme } from '../../styles'
-import color from 'color'
+import { Styled, Theme, Color } from '../../styles'
 import { Link, NavLink } from 'react-router-dom'
 
-export const HeaderNode = styled.header`
+export const HeaderNode = Styled.header`
   border-bottom: solid 1px
-    ${color(Theme.colors.black)
+    ${Color(Theme.colors.black)
       .alpha(0.07)
       .string()};
   min-height: 65px;
@@ -22,13 +20,13 @@ export const HeaderNode = styled.header`
   }
 `
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = Styled.div`
   min-height: 65px;
   position: relative;
   width: 100%;
 `
 
-export const HeaderBrand = styled(Link)`
+export const HeaderBrand = Styled(Link)`
   width: 120px;
   height: 100%;
   display: flex;
@@ -40,14 +38,14 @@ export const HeaderBrand = styled(Link)`
   }
 `
 
-export const HeaderContent = styled.div`
+export const HeaderContent = Styled.div`
   display: flex;
   justify-content: flex-end;
   height: 100%;
   align-items: center;
 `
 
-export const HeaderButton = styled(NavLink)`
+export const HeaderButton = Styled(NavLink)`
   min-height: 35px;
   padding: 14px 18px;
   font-size: 14px;

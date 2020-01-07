@@ -14,7 +14,7 @@ import { Spinner } from '../../components/Spinner'
 const Header = lazy(() => import('../../components/Header'))
 const Alert = lazy(() => import('../../components/Alert'))
 
-const App = memo(() => {
+export const App = memo(() => {
   useEffect(() => {
     setUserFromToken()
   }, [])
@@ -26,7 +26,6 @@ const App = memo(() => {
         <Alert />
         <Router>
           <Header />
-
           <Switch>
             <Route component={Routes} />
           </Switch>
@@ -35,5 +34,3 @@ const App = memo(() => {
     </Provider>
   )
 })
-
-export default App

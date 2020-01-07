@@ -1,12 +1,10 @@
-import styled from 'styled-components'
+import { Styled, Theme, Color } from '../../styles'
 import { Link } from 'react-router-dom'
-import { Theme } from '../../styles'
-import color from 'color'
 
-const bubbleColor = color(Theme.colors.primary)
+const bubbleColor = Color(Theme.colors.primary)
   .alpha(0.09)
   .string()
-export const BubbleItem = styled(Link)`
+export const BubbleItem = Styled(Link)`
   display: block;
   background: ${Theme.colors.white};
   width: ${props => (props.small ? '140px' : '180px')};
