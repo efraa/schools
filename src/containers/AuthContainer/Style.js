@@ -1,4 +1,5 @@
 import { Styled, Media, Animations } from '../../styles'
+import { Row, Col } from 'reactstrap'
 
 export const AuthPage = Styled.div`
   display: flex;
@@ -9,7 +10,7 @@ export const AuthPage = Styled.div`
   animation: ${Animations.Fade} 0.7s;
 `
 
-export const AuthImage = Styled.div`
+export const AuthImage = Styled(Col)`
   padding: 40px;
 
   ${Media.mobile`
@@ -22,7 +23,7 @@ export const AuthImage = Styled.div`
   `}
 `
 
-export const AuthRow = Styled.div`
+export const AuthRow = Styled(Row)`
   display: flex;
   justify-content: center;
   align-items: center;

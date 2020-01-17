@@ -2,10 +2,10 @@ import { createGlobalStyle } from 'styled-components'
 import { Theme, Media } from '.'
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css');
-  @import url('https://fonts.googleapis.com/css?family=Lato|Poppins:600,900&display=swap');
 
   * {
+    @import url('https://fonts.googleapis.com/css?family=Lato|Poppins:600,900&display=swap');
+
     margin: 0;
     padding: 0;
     color: ${Theme.colors.defaultTextColor};

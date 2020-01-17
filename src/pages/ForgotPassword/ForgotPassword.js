@@ -32,7 +32,9 @@ const ForgotPasswordPage = ({
       <form onSubmit={e => onSubmit(e)}>
         <div className="row">
           <div className="col-12 mb-lg-3">
-            <Common.Marked>Enter your email address.</Common.Marked>
+            <Common.Marked>
+              Enter the email address associated with your account.
+            </Common.Marked>
           </div>
 
           <Field

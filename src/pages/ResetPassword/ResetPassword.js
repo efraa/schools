@@ -44,7 +44,7 @@ const ResetPasswordPage = ({
         <div className="row">
           <div className="col-12">
             <User>
-              <Picture image={user.picture} />
+              <Picture image={user.picture.url} />
               <div>
                 <Name>
                   {user.name} {user.lastname}

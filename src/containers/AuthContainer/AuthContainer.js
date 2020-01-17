@@ -1,16 +1,24 @@
 import React, { memo } from 'react'
-import { Container } from '../Container'
+import { Container, Col } from 'reactstrap'
 // Styles
 import { AuthPage, AuthImage, AuthRow } from './Style'
 
 export const AuthContainer = memo(({ img, children }) => (
   <AuthPage>
-    <Container node="true">
-      <AuthRow className="row">
-        <AuthImage className="col-12 col-lg-6 order-lg-2">
+    <Container>
+      <AuthRow>
+        <AuthImage
+          xs={12}
+          lg={{
+            size: 6,
+            order: 2,
+          }}
+        >
           <img src={img} alt="" />
         </AuthImage>
-        <div className="col-12 col-lg-6">{children}</div>
+        <Col xs={12} lg={6}>
+          {children}
+        </Col>
       </AuthRow>
     </Container>
   </AuthPage>

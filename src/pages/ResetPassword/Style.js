@@ -8,7 +8,7 @@ export const User = Styled.div`
 
 export const Picture = Styled.div`
   background-position: center;
-  ${props => props.image && `background-image: url(${props.image})`}
+  ${props => props.image && `background-image: url(${props.image});`}
   width: 50px;
   height: 50px;
   min-width: 50px;
