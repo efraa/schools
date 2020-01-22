@@ -1,7 +1,7 @@
 import { verifyTokenAndGetUser } from '../../utils/jwt'
 import { AuthService } from '../../services'
 
-import { Alert } from '../actions'
+import { alert } from '../actions/setAlert'
 import { types } from '../types'
 
 const {
@@ -19,15 +19,6 @@ const {
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAIL,
 } = types
-
-// Set New Alerts
-const alert = (response, type, dispatch) => {
-  const { data, status } = response
-  if (data && data.length)
-    data.forEach(alert => dispatch(Alert(alert.msg, status)))
-
-  dispatch({ type })
-}
 
 // Signup
 export const signup = user => async dispatch => {

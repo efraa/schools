@@ -15,7 +15,7 @@ export const Theme = {
   colors: {
     ...colors,
     primary: colors.blue,
-    secound: colors.blueDark,
+    secound: colors.blue,
     defaultTextColor: colors.black,
   },
   fonts: {
