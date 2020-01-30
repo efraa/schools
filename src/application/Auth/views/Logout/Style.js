@@ -1,6 +1,6 @@
 import { Styled, Theme, Color, Animations } from '../../../core/styles'
 
-export const Logout = Styled.div`
+export const LogoutView = Styled.div`
   display: flex;
   min-height: calc(100vh - 70px);
   justify-content: center;

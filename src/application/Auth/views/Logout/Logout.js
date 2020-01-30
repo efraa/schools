@@ -6,7 +6,7 @@ import { logout } from '../../../core/store/actions'
 import { Container } from '../../../core/containers/Container'
 import { Button } from '../../../core/components/Forms/Button'
 import {
-  Logout,
+  LogoutView,
   Form,
   LogoutContainer,
   Content,
@@ -15,8 +15,8 @@ import {
   Buttons,
 } from './Style'
 
-const LogoutPage = memo(({ logout }) => (
-  <Logout>
+const Logout = memo(({ logout }) => (
+  <LogoutView>
     <Container>
       <Form
         className="col-12 col-md-8 col-lg-5"
@@ -44,7 +44,7 @@ const LogoutPage = memo(({ logout }) => (
         </LogoutContainer>
       </Form>
     </Container>
-  </Logout>
+  </LogoutView>
 ))
 
-export default connect(null, { logout })(LogoutPage)
+export default connect(null, { logout })(Logout)

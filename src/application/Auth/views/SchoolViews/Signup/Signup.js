@@ -13,7 +13,7 @@ import Image from '../../../assets/images/signup-school.svg'
 // Actions
 import { signup } from '../../../store/actions'
 
-const SignupSchoolPage = ({ signup }) => {
+const Signup = ({ signup }) => {
   const {
     onSubmit,
     onChange,
@@ -122,4 +122,4 @@ const SignupSchoolPage = ({ signup }) => {
   )
 }
 
-export default connect(null, { signup })(SignupSchoolPage)
+export default connect(null, { signup })(Signup)

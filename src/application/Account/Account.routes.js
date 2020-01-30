@@ -1,17 +1,20 @@
 import React, { Suspense, lazy } from 'react'
-import { Switch } from 'react-router-dom'
-import { Spinner } from '../core/components'
-import { PublicRoute } from '../core/routes'
+import { Spinner } from '../core/components/Spinner'
+import { PrivateRoute } from '../core/routes'
 
-// Routes
-const LoginPage = lazy(() => import('./views/'))
+// Views
+const Home = lazy(() => import('./views/HomePage'))
+const Profile = lazy(() => import('./views/Profile'))
 
-export const SignupRoutes = ({ isAuth }) => (
+const AccountRoutes = ({ isAuth }) => (
   <Suspense fallback={<Spinner />}>
-    <Switch>
-      <PublicRoute isAuth={isAuth} path="/auth" component={LoginPage} />
-    </Switch>
+    <PrivateRoute
+      isAuth={isAuth}
+      path="/account/:username"
+      component={Profile}
+    />
+    <PrivateRoute isAuth={isAuth} path="/home" component={Home} />
   </Suspense>
 )
 
-export default SignupRoutes
+export default AccountRoutes

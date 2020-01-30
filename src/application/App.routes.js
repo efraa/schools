@@ -3,22 +3,17 @@ import { Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Spinner } from './core/components/Spinner'
 
-// const HomePage = lazy(() => import('../pages/HomePage'))
-// const Profile = lazy(() => import('../pages/Profile'))
+// Routes
 const AuthRoutes = lazy(() => import('./Auth/Auth.routes'))
+const AccountRoutes = lazy(() => import('./Account/Account.routes'))
 
 const Routes = ({ isAuth, loading }) =>
   !loading && (
     <Suspense fallback={<Spinner />}>
       <Switch>
         <AuthRoutes isAuth={isAuth} />
-        {/*
-          <PrivateRoute
-            isAuth={isAuth}
-            path="/account/:username"
-            component={Profile}
-          />
-        <SignupRoutes isAuth={isAuth} /> */}
+        <AccountRoutes isAuth={isAuth} />
+        {/*<SignupRoutes isAuth={isAuth} /> */}
       </Switch>
     </Suspense>
   )

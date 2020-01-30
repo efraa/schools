@@ -1,46 +1,42 @@
 import React, { Suspense, lazy } from 'react'
 import { Spinner } from '../core/components/Spinner'
-import { PublicRoute } from '../core/routes'
+import { PublicRoute, PrivateRoute } from '../core/routes'
 
-// Routes
-const LoginPage = lazy(() => import('./views/LoginPage'))
+// Views
+const Login = lazy(() => import('./views/Login'))
 // const SignupRoutes = lazy(() => import('./SignupRoutes'))
-// const LogoutPage = lazy(() => import('../pages/LogoutPage'))
-// const LoginPage = lazy(() => import('../pages/LoginPage'))
-// const SignupSchoolPage = lazy(() => import('../pages/School/SignupSchoolPage'))
-// const ForgotPassword = lazy(() => import('../pages/ForgotPassword'))
-// const CheckEmail = lazy(() => import('../pages/CheckEmail'))
-// const ResetPassword = lazy(() => import('../pages/ResetPassword'))
-// const SignupLanding = lazy(() => import('../pages/SignupLanding'))
+const Logout = lazy(() => import('./views/LogoutPage'))
+const SignupSchool = lazy(() => import('./views/School/SignupSchoolPage'))
+const CheckEmail = lazy(() => import('./views/CheckEmail'))
+const ForgotPassword = lazy(() => import('./views/ForgotPassword'))
+const ResetPassword = lazy(() => import('./views/ResetPassword'))
+const SignupLanding = lazy(() => import('./views/SignupLanding'))
 
 const AuthRoutes = ({ isAuth }) => (
   <Suspense fallback={<Spinner />}>
-    <PublicRoute isAuth={isAuth} path="/auth" component={LoginPage} />
-    {/*
-      <PublicRoute
-        isAuth={isAuth}
-        path="/signup-school"
-        component={SignupSchoolPage}
-      />
-      <PublicRoute
-        isAuth={isAuth}
-        path="/forgot-password/check-your-email"
-        component={CheckEmail}
-      />
-      <PublicRoute
-        isAuth={isAuth}
-        path="/forgot-password"
-        component={ForgotPassword}
-      />
-      <PublicRoute
-        isAuth={isAuth}
-        path="/reset-password/:token"
-        component={ResetPassword}
-      />
-      <PublicRoute isAuth={isAuth} path="/signup" component={SignupLanding} />
-      <PrivateRoute isAuth={isAuth} path="/home" component={HomePage} />
-      <PrivateRoute isAuth={isAuth} path="/logout" component={LogoutPage} />
-    */}
+    <PublicRoute isAuth={isAuth} path="/auth" component={Login} />
+    <PublicRoute
+      isAuth={isAuth}
+      path="/signup-school"
+      component={SignupSchool}
+    />
+    <PublicRoute
+      isAuth={isAuth}
+      path="/forgot-password/check-your-email"
+      component={CheckEmail}
+    />
+    <PublicRoute
+      isAuth={isAuth}
+      path="/forgot-password"
+      component={ForgotPassword}
+    />
+    <PublicRoute
+      isAuth={isAuth}
+      path="/reset-password/:token"
+      component={ResetPassword}
+    />
+    <PublicRoute isAuth={isAuth} path="/signup" component={SignupLanding} />
+    <PrivateRoute isAuth={isAuth} path="/logout" component={Logout} />
   </Suspense>
 )
 

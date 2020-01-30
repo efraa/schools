@@ -12,11 +12,7 @@ import { Link } from 'react-router-dom'
 // Styles
 import { Common } from '../../../core/styles'
 
-const ForgotPasswordPage = ({
-  forgotPassword,
-  forgotPassIsLoading,
-  history,
-}) => {
+const ForgotPassword = ({ forgotPassword, forgotPassIsLoading, history }) => {
   const { onSubmit, onChange, isValid, validator, data } = useManageForm({
     fields: {
       email: '',
@@ -66,4 +62,4 @@ const mapStateToProps = state => ({
   emailSended: state.auth.emailSended,
 })
 
-export default connect(mapStateToProps, { forgotPassword })(ForgotPasswordPage)
+export default connect(mapStateToProps, { forgotPassword })(ForgotPassword)

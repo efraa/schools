@@ -11,7 +11,7 @@ import { Title } from '../../../core/components/Title'
 // Actions
 import { signup } from '../../../core/store/actions'
 
-const SignupPage = ({ meta, signup }) => {
+const Signup = ({ meta, signup }) => {
   const { onSubmit, onChange, isValid, validator, data } = useManageForm({
     fields: {
       name: '',
@@ -119,4 +119,4 @@ const SignupPage = ({ meta, signup }) => {
   )
 }
 
-export default connect(null, { signup })(SignupPage)
+export default connect(null, { signup })(Signup)

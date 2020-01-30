@@ -10,7 +10,7 @@ import { User, Picture, Name, UserName, Text } from './Style'
 // Actions
 import { forgotPassIsExpire, resetPassword } from '../../../core/store/actions'
 
-const ResetPasswordPage = ({
+const ResetPassword = ({
   forgotPassIsExpire,
   resetPassword,
   history,
@@ -94,5 +94,5 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, { forgotPassIsExpire, resetPassword })(
-  ResetPasswordPage
+  ResetPassword
 )

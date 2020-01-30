@@ -15,7 +15,7 @@ import { Common } from '../../../core/styles'
 import { LoginTitle } from './Style'
 import { Container, Row, Col } from 'reactstrap'
 
-const LoginPage = ({ login }) => {
+const Login = ({ login }) => {
   const { onSubmit, onChange, isValid, validator, data } = useManageForm({
     fields: {
       emailOrUsername: '',
@@ -90,4 +90,4 @@ const LoginPage = ({ login }) => {
   )
 }
 
-export default connect(null, { login })(LoginPage)
+export default connect(null, { login })(Login)
