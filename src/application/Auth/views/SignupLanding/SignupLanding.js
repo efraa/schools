@@ -3,10 +3,10 @@ import { Container } from '../../../core/containers/Container'
 import { Title } from '../../../core/components/Title'
 
 // Bubbles
-import { Bubble } from '../../../core/components/Bubble'
-import SchoolImage from '../../assets/images/bubble-school.svg'
-import TeacherImage from '../../assets/images/bubble-teacher.svg'
-import StudentImage from '../../assets/images/bubble-student.svg'
+import { Bubble } from '../../components/Bubble'
+import SchoolImage from '../../../../contexts/images/bubble-school.svg'
+import TeacherImage from '../../../../contexts/images/bubble-teacher.svg'
+import StudentImage from '../../../../contexts/images/bubble-student.svg'
 
 // Styles
 import {

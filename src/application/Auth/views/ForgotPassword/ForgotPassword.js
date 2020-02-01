@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { useManageForm } from '../../hooks'
+import { useManageForm } from '../../../../contexts/hooks'
 // Components
 import { Spinner } from '../../../core/components/Spinner'
-import { ForgotPassContainer } from '../../../core/containers/ForgotPassContainer'
+import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
 import { Field } from '../../../core/components/Forms/Field'
 import { Button } from '../../../core/components/Forms/Button'
 // Actions

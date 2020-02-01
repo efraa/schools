@@ -1,14 +1,14 @@
 import React, { useEffect, Suspense, lazy } from 'react'
 import { connect } from 'react-redux'
 // Actions
-import { getProfile } from '../../store/actions/profile'
+import { getProfile } from '../../../core/store/actions/profile'
 // Utils
-import { Roles } from '../../utils/Roles'
-import { Spinner } from '../../components/Spinner'
+import { Roles } from '../../../../contexts/utils/Roles'
+import { Spinner } from '../../../core/components/Spinner'
 // Components
-const SchoolProfile = lazy(() => import('./SchoolProfile'))
-const NotFoundPage = lazy(() => import('../../pages/NotFoundPage'))
-const AccountDisabled = lazy(() => import('../../pages/AccountDisabled'))
+const SchoolProfile = lazy(() => import('../SchoolViews/Profile'))
+const NotFoundPage = lazy(() => import('../../../core/views/NotFoundPage'))
+const AccountDisabled = lazy(() => import('../AccountDisabled'))
 
 const UserToProfile = ({ user }) => {
   if (user && user.loading) {

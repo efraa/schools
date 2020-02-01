@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 // Components
-import { ForgotPassContainer } from '../../../core/containers/ForgotPassContainer'
+import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
 import { Text, Small, Button } from './Style'
 
 const CheckEmail = memo(({ emailSended }) =>

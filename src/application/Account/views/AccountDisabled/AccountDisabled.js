@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
-import TimesImg from '../../assets/images/times.svg'
-import AccountDisabledImg from '../../assets/images/account-disabled.svg'
+import TimesImg from '../../../../contexts/images/times.svg'
+import AccountDisabledImg from '../../../../contexts/images/account-disabled.svg'
 import { Container, Row, Col } from 'reactstrap'
-import { Button } from '../../components/Forms/Button'
+import { Button } from '../../../core/components/Forms/Button'
 import { Times, Account, Title, Text } from './Style'
 import { Link } from 'react-router-dom'
 

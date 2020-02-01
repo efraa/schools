@@ -1,4 +1,4 @@
-import { Styled, Theme, Media, Color } from '../../styles'
+import { Styled, Theme, Media, Color } from '../../../core/styles'
 
 export const Times = Styled.img`
   width: 150px;

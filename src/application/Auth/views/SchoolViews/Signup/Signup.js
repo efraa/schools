@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { useManageForm } from '../../../hooks'
+import { useManageForm } from '../../../../../contexts/hooks'
 // components
-import { Range } from '../../../components/Forms/Range'
+import { Range } from '../../../../core/components/Forms/Range'
 import { Link } from 'react-router-dom'
 import { AuthContainer } from '../../../containers/AuthContainer'
-import { Container } from '../../../containers/Container'
-import { Field } from '../../../components/Forms/Field'
-import { Button } from '../../../components/Forms/Button'
-import { Title } from '../../../components/Title'
-import Image from '../../../assets/images/signup-school.svg'
+import { Container } from '../../../../core/containers/Container'
+import { Field } from '../../../../core/components/Forms/Field'
+import { Button } from '../../../../core/components/Forms/Button'
+import { Title } from '../../../../core/components/Title'
+import Image from '../../../../../contexts/images/signup-school.svg'
 // Actions
-import { signup } from '../../../store/actions'
+import { signup } from '../../../../core/store/actions'
 
 const Signup = ({ signup }) => {
   const {

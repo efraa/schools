@@ -1,4 +1,4 @@
-import { Styled, Theme, Color } from '../../../../../styles'
+import { Styled, Theme, Color } from '../../../../../../core/styles'
 
 export const Sidebar = Styled.div`
   background: ${Theme.colors.white};

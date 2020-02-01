@@ -1,4 +1,4 @@
-import SchoolsImg from '../../assets/images/schools.svg'
+import SchoolsImg from '../../../../contexts/images/schools.svg'
 import { Styled, Theme, Color, Media, Animations } from '../../../core/styles'
 
 export const Signup = Styled.div`

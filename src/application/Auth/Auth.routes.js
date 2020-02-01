@@ -5,8 +5,8 @@ import { PublicRoute, PrivateRoute } from '../core/routes'
 // Views
 const Login = lazy(() => import('./views/Login'))
 // const SignupRoutes = lazy(() => import('./SignupRoutes'))
-const Logout = lazy(() => import('./views/LogoutPage'))
-const SignupSchool = lazy(() => import('./views/School/SignupSchoolPage'))
+const Logout = lazy(() => import('./views/Logout'))
+const SignupSchool = lazy(() => import('./views/SchoolViews/Signup'))
 const CheckEmail = lazy(() => import('./views/CheckEmail'))
 const ForgotPassword = lazy(() => import('./views/ForgotPassword'))
 const ResetPassword = lazy(() => import('./views/ResetPassword'))

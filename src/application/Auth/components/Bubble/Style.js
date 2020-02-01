@@ -1,4 +1,4 @@
-import { Styled, Theme, Color } from '../../styles'
+import { Styled, Theme, Color } from '../../../core/styles'
 import { Link } from 'react-router-dom'
 
 const bubbleColor = Color(Theme.colors.primary)
