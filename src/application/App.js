@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import Routes from './App.routes'
-import { setUserFromToken } from '../contexts/utils/jwt/setUserFromToken'
-import store from './core/store'
+import { setUserFromToken } from '../utils/jwt/setUserFromToken'
+import store from '../store'
 
 // Styles
-import { GlobalStyle } from './core/styles'
+import { GlobalStyle } from '../styles'
 
 // Components
 import { Spinner } from './core/components/Spinner'

@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 // Styles
-import { Common } from '../../../core/styles'
+import { Common } from '../../../../styles'
 import { Container } from '../../../core/containers/Container'
 const { Wrapper, ForgotPassNode, Title } = Common.ForgotPassStyle
 

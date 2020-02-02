@@ -1,4 +1,4 @@
-import { Styled, Theme, Animations, Color } from '../../styles'
+import { Styled, Theme, Animations, Color } from '../../../../styles'
 
 export const AlertContainer = Styled.div`
   z-index: 10000;

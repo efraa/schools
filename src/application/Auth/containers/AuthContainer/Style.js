@@ -1,4 +1,4 @@
-import { Styled, Media, Animations } from '../../../core/styles'
+import { Styled, Media, Animations } from '../../../../styles'
 import { Row, Col } from 'reactstrap'
 
 export const AuthPage = Styled.div`

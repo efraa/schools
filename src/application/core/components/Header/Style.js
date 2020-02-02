@@ -1,4 +1,4 @@
-import { Styled, Theme, Color } from '../../styles'
+import { Styled, Theme, Color } from '../../../../styles'
 import { Link, NavLink } from 'react-router-dom'
 
 export const HeaderNode = Styled.header`
@@ -27,7 +27,7 @@ export const HeaderWrapper = Styled.div`
 `
 
 export const HeaderBrand = Styled(Link)`
-  width: 120px;
+  width: 108px;
   height: 100%;
   display: flex;
   justify-content: center;

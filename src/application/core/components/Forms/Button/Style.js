@@ -1,4 +1,4 @@
-import { Styled, Theme, Color, Media } from '../../../styles'
+import { Styled, Theme, Color, Media } from '../../../../../styles'
 
 export const ButtonNode = Styled.button`
   min-height: 45px;

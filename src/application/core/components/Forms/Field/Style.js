@@ -1,4 +1,4 @@
-import { Styled, Theme, Media, Color } from '../../../styles'
+import { Styled, Theme, Media, Color } from '../../../../../styles'
 
 export const FormField = Styled.div`
   margin: 8px 0;

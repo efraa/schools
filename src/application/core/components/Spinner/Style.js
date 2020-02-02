@@ -1,4 +1,4 @@
-import { Theme, Color } from '../../styles'
+import { Theme, Color } from '../../../../styles'
 import styled, { keyframes } from 'styled-components'
 
 export const SpinnerWrapper = styled.div`

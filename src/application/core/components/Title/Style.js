@@ -1,4 +1,4 @@
-import { Styled, Theme, Media } from '../../styles'
+import { Styled, Theme, Media } from '../../../../styles'
 
 export const TitleNode = Styled.h1`
   font-size: 30px;

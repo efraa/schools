@@ -1,4 +1,4 @@
-import { Styled, Theme, Color } from '../../styles'
+import { Styled, Theme } from '../../../../styles'
 
 export const PictureItem = Styled.div`
   ${props => `

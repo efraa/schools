@@ -5,6 +5,7 @@ import { Spinner } from './core/components/Spinner'
 
 // Routes
 const AuthRoutes = lazy(() => import('./Auth/Auth.routes'))
+const SignupRoutes = lazy(() => import('../routes/SignupRoutes'))
 const AccountRoutes = lazy(() => import('./Account/Account.routes'))
 
 const Routes = ({ isAuth, loading }) =>
@@ -13,7 +14,7 @@ const Routes = ({ isAuth, loading }) =>
       <Switch>
         <AuthRoutes isAuth={isAuth} />
         <AccountRoutes isAuth={isAuth} />
-        {/*<SignupRoutes isAuth={isAuth} /> */}
+        <SignupRoutes isAuth={isAuth} />
       </Switch>
     </Suspense>
   )

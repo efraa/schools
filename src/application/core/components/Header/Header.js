@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Container } from '../../containers/Container'
-import Logo from '../../../../contexts/images/logo.svg'
+import Logo from '../../../../images/logo.png'
 
 import {
   HeaderNode,
