@@ -6,8 +6,8 @@ const {
   LOGIN_FAIL,
   SET_CURRENT_USER,
   LOGOUT,
-  REGISTER_FAIL,
-  REGISTER_SUCCESS,
+  SIGNUP_FAIL,
+  SIGNUP_SUCCESS,
   FORGOT_PASSWORD_LOADING,
   FORGOT_PASSWORD_SUCCESS,
   RESET_PASSWORD_GET_USER_SUCCESS,
@@ -24,7 +24,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
-    case REGISTER_SUCCESS:
+    case SIGNUP_SUCCESS:
       localStorage.setItem('token', action.token)
       return {
         ...state,
@@ -64,7 +64,7 @@ export default (state = initialState, action) => {
           user: action.user,
         },
       }
-    case REGISTER_FAIL:
+    case SIGNUP_FAIL:
     case LOGIN_FAIL:
     case LOGOUT:
       localStorage.removeItem('token')

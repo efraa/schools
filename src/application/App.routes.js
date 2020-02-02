@@ -1,20 +1,21 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense } from 'react'
 import { Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Spinner } from './core/components/Spinner'
-
 // Routes
-const AuthRoutes = lazy(() => import('./Auth/Auth.routes'))
-const SignupRoutes = lazy(() => import('../routes/SignupRoutes'))
-const AccountRoutes = lazy(() => import('./Account/Account.routes'))
+import { PrivateRoute, PublicRoute, Routes } from '../routes'
 
-const Routes = ({ isAuth, loading }) =>
+const AppRoutes = ({ isAuth, loading }) =>
   !loading && (
     <Suspense fallback={<Spinner />}>
       <Switch>
-        <AuthRoutes isAuth={isAuth} />
-        <AccountRoutes isAuth={isAuth} />
-        <SignupRoutes isAuth={isAuth} />
+        {Routes.map(({ isProtected, ...props }, key) =>
+          isProtected ? (
+            <PrivateRoute key={key} isAuth={isAuth} {...props} />
+          ) : (
+            <PublicRoute key={key} isAuth={isAuth} {...props} />
+          )
+        )}
       </Switch>
     </Suspense>
   )
@@ -24,4 +25,4 @@ const mapStateToProps = state => ({
   loading: state.auth.loading,
 })
 
-export default connect(mapStateToProps, {})(Routes)
+export default connect(mapStateToProps, {})(AppRoutes)

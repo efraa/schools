@@ -11,7 +11,7 @@ import { Title } from '../../../core/components/Title'
 // Actions
 import { signup } from '../../../../store/actions'
 
-const Signup = ({ meta, signup }) => {
+const Signup = ({ meta, signup, ...props }) => {
   const { onSubmit, onChange, isValid, validator, data } = useManageForm({
     fields: {
       name: '',

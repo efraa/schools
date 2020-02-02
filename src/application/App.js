@@ -1,5 +1,5 @@
 import React, { useEffect, memo, Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import Routes from './App.routes'
@@ -26,9 +26,7 @@ export const App = memo(() => {
         <Alert />
         <Router>
           <Header />
-          <Switch>
-            <Route component={Routes} />
-          </Switch>
+          <Route component={Routes} />
         </Router>
       </Suspense>
     </Provider>
