@@ -2,6 +2,7 @@ const {
   REACT_APP_API_URL: URL,
   REACT_APP_API_PORT: PORT,
   REACT_APP_API_PREFIX_ROUTES: PREFIX,
+  REACT_APP_API_HEROKU: HEROKU,
 } = process.env
 
 export const headers = {
@@ -9,4 +10,4 @@ export const headers = {
   Authorization: localStorage.token,
 }
 
-export const apiRoute = `${URL}:${PORT}${PREFIX}`
+export const apiRoute = HEROKU ? HEROKU : `${URL}:${PORT}${PREFIX}`
