@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { useManageForm } from '../../../../hooks'
+import { Row, Col } from 'reactstrap'
 // Components
 import { Spinner } from '../../../core/components/Spinner'
 import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
@@ -26,13 +27,12 @@ const ForgotPassword = ({ forgotPassword, forgotPassIsLoading, history }) => {
     <ForgotPassContainer title="Find your Schools account.">
       {forgotPassIsLoading ? <Spinner /> : ''}
       <form onSubmit={e => onSubmit(e)}>
-        <div className="row">
-          <div className="col-12 mb-lg-3">
+        <Row>
+          <Col xs={12} className="mb-lg-3">
             <Common.Marked>
               Enter the email address associated with your account.
             </Common.Marked>
-          </div>
-
+          </Col>
           <Field
             placeholder="youraccount@smail.com"
             value={email}
@@ -43,15 +43,15 @@ const ForgotPassword = ({ forgotPassword, forgotPassIsLoading, history }) => {
             {validator.message('email', email, 'required|email')}
           </Field>
 
-          <div className="col-12 d-flex justify-content-end mt-5">
+          <Col xs={12} className="d-flex justify-content-end mt-5">
             <Button as={Link} to="/auth" outline="true" className="mr-3">
               Cancel
             </Button>
             <Button type="submit" disabled={!isValid}>
               Find account
             </Button>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </form>
     </ForgotPassContainer>
   )
