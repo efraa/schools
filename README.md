@@ -1,13 +1,10 @@
 # Schools 🚀
 
-### Requirement 📌
-***
+📢 Schools aims to be an application with the main objective <br />
+of automating education processes.
 
-* NodeJS
-
-__This repository depends on the successful installation of the API__ <br>
-__Back end in the repository located__ [SchoolsAPI.](https://github.com/Efraa/schools-api)
-***
+Many of the functionalities are based on the daily work <br />
+of organizations and their teachers.
 
 ### Development and running the application: 📌
 ***
@@ -15,8 +12,7 @@ __Back end in the repository located__ [SchoolsAPI.](https://github.com/Efraa/sc
 1. Clone
 2. Move to --> `cd schools`
 3. copy `.default.env` to `.env`
-4. Run `npm install`
-5. Be sure to run the API on your machine.
+4. Run `yarn`
 
 ### Env variables: 📌
 ***
@@ -36,7 +32,21 @@ __Make sure the following values ​​are the same in your API.__
 ### Ready 📌
 ***
 
-__Run__ `npm start`
+__Run__ `yarn start` ✔️
 
 Runs the app in the development mode.<br>
 Your browser will open in [http://localhost:3000](http://localhost:3000).
+
+
+### Conventional Commits ✔️
+***
+
+build: Changes that affect the build system or external dependencies (example scopes: yarn, npm)
+ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, Docker)
+docs: Documentation only changes
+feat: A new feature
+fix: A bug fix
+perf: A code change that improves performance
+refactor: A code change that neither fixes a bug nor adds a feature
+style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+test: Adding missing tests or correcting existing tests

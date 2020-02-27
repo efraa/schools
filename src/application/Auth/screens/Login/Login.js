@@ -33,11 +33,9 @@ const Login = ({ login }) => {
             <LoginTitle>
               <Title text="Log in to your account." />
             </LoginTitle>
-
-            <div className="col-12 mb-lg-3">
+            <Col xs={12} className="mb-lg-3">
               <Common.Marked>Or use your email account.</Common.Marked>
-            </div>
-            <Col></Col>
+            </Col>
 
             <Field
               placeholder="Email address or Username"
@@ -68,7 +66,10 @@ const Login = ({ login }) => {
               {validator.message('password', password, 'required|min:6')}
             </Field>
 
-            <div className="col-12 d-flex justify-content-between align-items-center mt-4">
+            <Col
+              xs={12}
+              className="d-flex justify-content-between align-items-center mt-4"
+            >
               <Link className="mr-3" to="/forgot-password">
                 {' '}
                 <b>Forgot password?</b>{' '}
@@ -76,13 +77,13 @@ const Login = ({ login }) => {
               <Button type="submit" disabled={!isValid}>
                 Log in
               </Button>
-            </div>
-            <div className="col-12 mt-5">
+            </Col>
+            <Col xs={12} className="mt-5">
               <p>
                 Don't have an account?
                 <Link to="/signup"> Sign up!</Link>
               </p>
-            </div>
+            </Col>
           </Row>
         </Container>
       </form>

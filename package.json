@@ -27,7 +27,7 @@
     "test:coverage": "react-scripts test --coverage",
     "lint": "eslint src",
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)\"",
-    "format": "npm run prettier -- --write"
+    "format": "yarn prettier -- --write"
   },
   "author": "Efrain Peralta",
   "eslintConfig": {
