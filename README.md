@@ -1,52 +1,47 @@
-# Schools 🚀
+# Schools 🏫
 
-📢 Schools aims to be an application with the main objective <br />
-of automating education processes.
+Schools aim to be an application with the primary objective of automating education processes.
+Many of the functionalities are based on the daily work of organizations and their teachers.
 
-Many of the functionalities are based on the daily work <br />
-of organizations and their teachers.
+## Developing & Running
 
-### Development and running the application: 📌
-***
+### Requisites
 
-1. Clone
-2. Move to --> `cd schools`
-3. copy `.default.env` to `.env`
-4. Run `yarn`
+* Node >=10.x.
+* Yarn.
+* The backend must be running (can be local or not).
 
-### Env variables: 📌
-***
+### Start
 
-* `API_URL` : URL base of your API. --> `http://localhost`
-* `API_PORT` : API PORT --> default `2302`
-* `API_PREFIX_ROUTES` : default --> `/api/v1`
+1. Clone this repo.
+2. Move to the cloned directory.
+3. Copy `.default.env` to `.env`.
+4. Update values on your new `.env` file.
+5. Run `yarn install`.
 
-### IMPORTANT NOTE: 📌
-***
+### Env variables
 
-__Make sure the following values ​​are the same in your API.__
+* `API_URL` : The URL where your API is running (FULL URL).
+* `REACT_APP_TOKEN_EXPIRE` : The amount of time before a token expires.
+* `REACT_APP_TOKEN_SECRET` : The secret to sign JWTs.
 
-* `TOKEN_EXPIRE` : Copy from your API --> default `72h`
-* `SECRET` : Copy from your API --> example: `secret-schools-api`
+#### Notice
 
-### Ready 📌
-***
+**Make sure your `REACT_APP_TOKEN_EXPIRE` and `REACT_APP_TOKEN_SECRET` env ​​are the same in your API.**
 
-__Run__ `yarn start` ✔️
+### Ready
 
-Runs the app in the development mode.<br>
-Your browser will open in [http://localhost:3000](http://localhost:3000).
+**Run** `yarn start`: this will start the app in the development mode.
+Your browser will open in `http://localhost:3000`.
 
+## Conventional Commits
 
-### Conventional Commits ✔️
-***
-
-* build: Changes that affect the build system or external dependencies (example scopes: yarn, npm)
-* ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, Docker)
-* docs: Documentation only changes
-* feat: A new feature
-* fix: A bug fix
-* perf: A code change that improves performance
-* refactor: A code change that neither fixes a bug nor adds a feature
-* style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* test: Adding missing tests or correcting existing tests
+* **build**: Changes that affect the build system or external dependencies (example scopes: yarn, npm).
+* **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, Docker).
+* **docs**: Documentation only changes.
+* **feat**: A new feature.
+* **fix**: A bug fix.
+* **perf**: A code change that improves performance.
+* **refactor**: A code change that neither fixes a bug nor adds a feature.
+* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+* **test**: Adding or correcting tests.
