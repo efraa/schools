@@ -1,4 +1,4 @@
-import { Styled, Theme, Animations, Color } from '../../../../styles'
+import { Styled, theme, animations, Color } from '../../styles'
 
 export const AlertContainer = Styled.div`
   z-index: 10000;
@@ -20,19 +20,19 @@ export const AlertCard = Styled.div`
   border-radius: 4px;
   transition: all 0.3s ease;
   background-color: ${props =>
-    props.success ? Theme.colors.black : Theme.colors.white};
+    props.success ? theme.colors.black : theme.colors.white};
   box-shadow: ${props =>
     `6px 6px ${
       props.success
-        ? Color(Theme.colors.black).alpha(0.3)
-        : Color(Theme.colors.danger).alpha(0.3)
+        ? Color(theme.colors.black).alpha(0.3)
+        : Color(theme.colors.danger).alpha(0.3)
     }`};
   display: flex;
   letter-spacing: 0.5px;
   border: solid 2px;
   border-color: ${props =>
-    props.success ? 'transparent' : Theme.colors.danger};
+    props.success ? 'transparent' : theme.colors.danger};
   font-weight: bold;
-  color: ${props => (props.success ? Theme.colors.white : Theme.colors.danger)};
-  animation: ${Animations.Up} 0.7s;
+  color: ${props => (props.success ? theme.colors.white : theme.colors.danger)};
+  animation: ${animations.Up} 0.7s;
 `

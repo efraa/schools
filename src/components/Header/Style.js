@@ -1,9 +1,9 @@
-import { Styled, Theme, Color } from '../../../../styles'
+import { Styled, theme, Color } from '../../styles'
 import { Link, NavLink } from 'react-router-dom'
 
 export const HeaderNode = Styled.header`
   border-bottom: solid 1px
-    ${Color(Theme.colors.black)
+    ${Color(theme.colors.black)
       .alpha(0.07)
       .string()};
   min-height: 65px;
@@ -12,7 +12,7 @@ export const HeaderNode = Styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  background: ${Theme.colors.white};
+  background: ${theme.colors.white};
   z-index: 1;
 
   .row {

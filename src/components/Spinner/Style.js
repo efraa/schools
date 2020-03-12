@@ -1,10 +1,10 @@
-import { Theme, Color } from '../../../../styles'
+import { theme, Color } from '../../styles'
 import styled, { keyframes } from 'styled-components'
 
 export const SpinnerWrapper = styled.div`
   position: absolute;
   z-index: 1;
-  background: ${Color(Theme.colors.white)
+  background: ${Color(theme.colors.white)
     .alpha(0.5)
     .string()};
   width: 100%;
@@ -39,8 +39,8 @@ export const SpinnerNode = styled.div`
     height: 46px;
     margin: 1px;
     border-radius: 50%;
-    border: 5px solid ${Theme.colors.white};
-    border-color: ${Theme.colors.primary} transparent ${Theme.colors.secound}
+    border: 5px solid ${theme.colors.white};
+    border-color: ${theme.colors.primary} transparent ${theme.colors.secound}
       transparent;
     animation: ${loading} 1.2s linear infinite;
   }

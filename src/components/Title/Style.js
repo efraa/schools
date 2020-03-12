@@ -1,4 +1,4 @@
-import { Styled, Theme, Media } from '../../../../styles'
+import { Styled, theme, Media } from '../../styles'
 
 export const TitleNode = Styled.h1`
   font-size: 30px;
@@ -6,7 +6,7 @@ export const TitleNode = Styled.h1`
   margin-bottom: 16px !important;
 
   ${Media.up({
-    size: Theme.breakpoints.md,
+    size: theme.breakpoints.md,
     styles: `font-size: 45px;
       line-height: 50px;
       margin-bottom: 16px !important;`,

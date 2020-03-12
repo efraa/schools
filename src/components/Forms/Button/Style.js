@@ -1,16 +1,16 @@
-import { Styled, Theme, Color, Media } from '../../../../../styles'
+import { Styled, theme, Color, Media } from '../../../styles'
 
 export const ButtonNode = Styled.button`
   min-height: 45px;
   padding: 16px 24px;
   text-align: center;
-  background-color: ${Theme.colors.primary};
-  color: ${Theme.colors.white};
+  background-color: ${theme.colors.primary};
+  color: ${theme.colors.white};
   border: none;
   outline: none;
   font-size: 16px;
   margin: 0;
-  font-family: ${Theme.fonts.primary};
+  font-family: ${theme.fonts.primary};
   font-weight: 600;
   transition: all 0.3s ease-in-out;
   letter-spacing: 0.5px;
@@ -33,41 +33,41 @@ export const ButtonNode = Styled.button`
   `}
 
   &:hover {
-    background-color: ${Color(Theme.colors.primary)
+    background-color: ${Color(theme.colors.primary)
       .darken(0.1)
       .string()};
-    color: ${Theme.colors.white};
+    color: ${theme.colors.white};
   }
 
   &:focus,
   &:focus:active {
-    background-color: ${Color(Theme.colors.primary)
+    background-color: ${Color(theme.colors.primary)
       .darken(0.1)
       .string()};
     box-shadow: 0 0 0 4px
-      ${Color(Theme.colors.primary)
+      ${Color(theme.colors.primary)
         .alpha(0.3)
         .string()};
-    color: ${Theme.colors.white};
+    color: ${theme.colors.white};
   }
 
   ${props =>
     props.outline &&
     `
-    background: ${Theme.colors.white};
-    color: ${Theme.colors.primary};
+    background: ${theme.colors.white};
+    color: ${theme.colors.primary};
 
     &:hover {
-      background: ${Color(Theme.colors.primary)
+      background: ${Color(theme.colors.primary)
         .alpha(0.1)
         .string()};
-      color: ${Theme.colors.primary};
+      color: ${theme.colors.primary};
     }
 
     &:focus {
-      background: ${Theme.colors.white};
-      color: ${Theme.colors.primary};
-      box-shadow: 0 0 0 4px ${Color(Theme.colors.primary)
+      background: ${theme.colors.white};
+      color: ${theme.colors.primary};
+      box-shadow: 0 0 0 4px ${Color(theme.colors.primary)
         .alpha(0.3)
         .string()};
     }
@@ -76,21 +76,21 @@ export const ButtonNode = Styled.button`
   ${props =>
     props.secound &&
     `
-    background-color: ${Color(Theme.colors.primary)
+    background-color: ${Color(theme.colors.primary)
       .alpha(0.15)
       .string()};
-    color: ${Theme.colors.primary};
+    color: ${theme.colors.primary};
 
     &:hover {
-      background-color: ${Theme.colors.primary};
-      color: ${Theme.colors.white};
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.white};
     }
 
     &:focus,
     &:focus:active {
-      background-color: ${Theme.colors.primary};
-      color: ${Theme.colors.white};
-      box-shadow: 0 0 0 4px ${Color(Theme.colors.primary)
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.white};
+      box-shadow: 0 0 0 4px ${Color(theme.colors.primary)
         .alpha(0.3)
         .string()};
     }
