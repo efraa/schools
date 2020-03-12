@@ -7,7 +7,7 @@ import {
   forgotPassword,
   forgotPassIsExpire,
   resetPassword,
-} from './auth'
+} from './authentication'
 
 export {
   Alert,

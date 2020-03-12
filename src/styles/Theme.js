@@ -11,7 +11,7 @@ const colors = {
   grayLight: '#F9F9FB',
 }
 
-export const Theme = {
+export const theme = {
   colors: {
     ...colors,
     primary: colors.blue,

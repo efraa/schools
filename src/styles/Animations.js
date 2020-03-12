@@ -21,7 +21,7 @@ const Fade = keyframes`
   }
 `
 
-export const Animations = {
+export const animations = {
   Up,
   Fade,
 }

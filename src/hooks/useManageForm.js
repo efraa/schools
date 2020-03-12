@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Validator from 'simple-react-validator'
 
-import { validations } from '../utils/config'
+import { validations } from '../config'
 
 export const useManageForm = ({ fields, connect, moreData }) => {
   const [isValid, setValid] = useState(false)

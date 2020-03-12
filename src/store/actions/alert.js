@@ -1,5 +1,5 @@
-import { types } from '../types'
-const { SET_ALERT, REMOVE_ALERT } = types
+import { basics } from '../types'
+const { SET_ALERT, REMOVE_ALERT } = basics
 
 export const Alert = (msg, alertType, timeout = 5000) => dispatch => {
   const id = new Date().getTime()

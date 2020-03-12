@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { Theme, Media } from '.'
+import { theme, Media } from '.'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 
     margin: 0;
     padding: 0;
-    color: ${Theme.colors.defaultTextColor};
+    color: ${theme.colors.defaultTextColor};
   }
 
   html,
@@ -19,8 +19,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
-    background: ${Theme.colors.white};
-    font-family: ${Theme.fonts.secondary};
+    background: ${theme.colors.white};
+    font-family: ${theme.fonts.secondary};
     font-weight: normal;
   }
 
@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
   h5,
   h6,
   h6 {
-    font-family: ${Theme.fonts.primary};
+    font-family: ${theme.fonts.primary};
     font-weight: 900;
   }
 
@@ -58,14 +58,14 @@ export const GlobalStyle = createGlobalStyle`
 
   strong {
     font-weight: 600;
-    font-family: ${Theme.fonts.primary};
+    font-family: ${theme.fonts.primary};
   }
 
   a,
   b {
-    color: ${Theme.colors.primary};
+    color: ${theme.colors.primary};
     transition: all 0.5s ease-in-out;
-    font-family: ${Theme.fonts.primary};
+    font-family: ${theme.fonts.primary};
     font-weight: 600;
 
     &:hover,
@@ -82,7 +82,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .srv-validation-message {
     margin-top: 10px;
-    color: ${Theme.colors.danger};
+    color: ${theme.colors.danger};
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 14px;

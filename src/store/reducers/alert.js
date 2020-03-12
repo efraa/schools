@@ -1,6 +1,6 @@
-import { types } from '../types'
+import { basics } from '../types'
 
-const { SET_ALERT, REMOVE_ALERT } = types
+const { SET_ALERT, REMOVE_ALERT } = basics
 const initialState = []
 
 export const alert = (state = initialState, action) => {
