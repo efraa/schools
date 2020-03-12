@@ -1,7 +1,7 @@
 import { verifyTokenAndGetUser } from '../../utils/jwt'
 import { AuthService } from '../../services'
 
-import { alert } from '../actions/setAlert'
+import { alert } from './setAlert'
 import { types } from '../types'
 
 const {
@@ -60,7 +60,7 @@ export const forgotPassIsExpire = (token, history) => async dispatch => {
     if (res.data) {
       dispatch({
         type: RESET_PASSWORD_GET_USER_SUCCESS,
-        user: res.data,
+        status: res.data,
       })
     }
   } catch (err) {

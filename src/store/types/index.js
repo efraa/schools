@@ -1,9 +1,7 @@
-import { AUTH } from './auth.types'
-import { OTHERS } from './basic.types'
-import { USER } from './user.types'
+import { authentication } from './authenticationTypes'
+import { basics } from './basicTypes'
 
 export const types = {
-  ...AUTH,
-  ...USER,
-  ...OTHERS,
+  ...authentication,
+  ...basics,
 }

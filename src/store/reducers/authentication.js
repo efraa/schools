@@ -61,7 +61,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         resetPassword: {
-          user: action.user,
+          status: action.status,
         },
       }
     case SIGNUP_FAIL:

@@ -1,13 +1,11 @@
 import { combineReducers } from 'redux'
 
-import auth from './auth'
+import auth from './authentication'
 import { alert } from './alert'
-import { profile } from './profile'
 
 const appReducer = combineReducers({
   auth,
   alert,
-  profile,
 })
 
 const rootReducer = (state, action) => {
