@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { config } from '../../config'
+import { config } from '../config'
 
 export const verifyTokenAndGetUser = async token =>
   await jwt.verify(token, config.jwt.SECRET)
