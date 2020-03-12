@@ -2,17 +2,17 @@ import React, { useEffect, memo, Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import Routes from './App.routes'
-import { setUserFromToken } from '../utils/jwt/setUserFromToken'
-import store from '../store'
+import { setUserFromToken } from './utils/setUserFromToken'
+import Routes from './routing'
+import { store } from './store'
 
 // Styles
-import { GlobalStyle } from '../styles'
+import { GlobalStyle } from './styles'
 
 // Components
-import { Spinner } from './core/components/Spinner'
-const Header = lazy(() => import('./core/components/Header'))
-const Alert = lazy(() => import('./core/components/Alert'))
+import { Spinner } from './components/Spinner'
+const Header = lazy(() => import('./components/Header'))
+const Alert = lazy(() => import('./components/Alert'))
 
 export const App = memo(() => {
   useEffect(() => {
