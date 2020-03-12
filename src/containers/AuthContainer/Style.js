@@ -1,4 +1,4 @@
-import { Styled, Media, Animations } from '../../../../styles'
+import { Styled, Media, animations } from '../../styles'
 import { Row, Col } from 'reactstrap'
 
 export const AuthPage = Styled.div`
@@ -7,7 +7,7 @@ export const AuthPage = Styled.div`
   align-content: center;
   min-height: calc(100vh - 70px);
   padding: 40px 0;
-  animation: ${Animations.Fade} 0.7s;
+  animation: ${animations.Fade} 0.7s;
 `
 
 export const AuthImage = Styled(Col)`
