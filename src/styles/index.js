@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import color from 'color'
 
-export { Theme } from './Theme'
-export { Media } from './Media'
+export { theme } from './theme'
+export { Media } from './media'
 export { GlobalStyle } from './globalStyles'
-export { Animations } from './Animations'
+export { animations } from './animations'
 export { Common } from './common'
 export { color as Color }
 export { styled as Styled }

@@ -1,4 +1,4 @@
-import { Theme } from '.'
+import { theme } from '.'
 
 const up = ({ size, styles }) =>
   `@media only screen and (min-width: ${size}) {
@@ -15,19 +15,19 @@ export const Media = {
   down,
   mobile: styles =>
     down({
-      size: Theme.breakpoints.lg,
+      size: theme.breakpoints.lg,
       styles,
     }),
 
   desktop: styles =>
     up({
-      size: Theme.breakpoints.lg,
+      size: theme.breakpoints.lg,
       styles,
     }),
 
   desktopFull: styles =>
     up({
-      size: Theme.breakpoints.xl,
+      size: theme.breakpoints.xl,
       styles,
     }),
 }

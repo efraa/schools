@@ -1,4 +1,4 @@
-import { Styled, Theme, Animations, Color, Media } from '../../styles'
+import { Styled, theme, animations, Color, Media } from '../../styles'
 
 export const ForgotPassStyle = {
   Wrapper: Styled.div`
@@ -8,17 +8,17 @@ export const ForgotPassStyle = {
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    animation: ${Animations.Fade} 0.7s;
+    animation: ${animations.Fade} 0.7s;
   `,
 
   ForgotPassNode: Styled.div`
     background: $white;
     box-shadow: 8px 8px
-      ${Color(Theme.colors.primary)
+      ${Color(theme.colors.primary)
         .alpha(0.1)
         .string()};
     border: solid 1px
-      ${Color(Theme.colors.primary)
+      ${Color(theme.colors.primary)
         .alpha(0.1)
         .string()};
     padding: 44px;
