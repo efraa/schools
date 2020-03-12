@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { useManageForm } from '../../../../hooks'
+import { useManageForm } from '../../hooks'
 import { Row, Col } from 'reactstrap'
 // Components
-import { Spinner } from '../../../core/components/Spinner'
+import { Spinner } from '../../components/Spinner'
 import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
-import { Field } from '../../../core/components/Forms/Field'
-import { Button } from '../../../core/components/Forms/Button'
+import { Field } from '../../components/Forms/Field'
+import { Button } from '../../components/Forms/Button'
 // Actions
-import { forgotPassword } from '../../../../store/actions'
+import { forgotPassword } from '../../store/actions'
 import { Link } from 'react-router-dom'
 // Styles
-import { Common } from '../../../../styles'
+import { Common } from '../../styles'
 
 const ForgotPassword = ({ forgotPassword, forgotPassIsLoading, history }) => {
   const { onSubmit, onChange, isValid, validator, data } = useManageForm({

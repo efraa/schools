@@ -1,9 +1,9 @@
-import { Styled, Theme, Media, Color } from '../../../../styles'
+import { Styled, theme, Media, Color } from '../../styles'
 import { Link } from 'react-router-dom'
 
 export const Text = Styled.p`
   font-size: 24px;
-  color: ${Color(Theme.colors.defaultTextColor)
+  color: ${Color(theme.colors.defaultTextColor)
     .alpha(0.7)
     .string()};
   margin-bottom: 24px;
@@ -18,7 +18,7 @@ export const Text = Styled.p`
 
 export const Small = Styled.p`
   small {
-    color: ${Theme.colors.blueDark};
+    color: ${theme.colors.blueDark};
     font-size: 16px;
     ${Media.mobile`
       font-size: 14px;

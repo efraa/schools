@@ -1,4 +1,4 @@
-import { Styled, Media } from '../../../../styles'
+import { Styled, Media } from '../../styles'
 
 export const LoginTitle = Styled.div`
   width: 100%;

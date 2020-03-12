@@ -1,12 +1,12 @@
-import { Styled, Theme, Color, Animations } from '../../../../styles'
+import { Styled, theme, Color, animations } from '../../styles'
 
 export const LogoutView = Styled.div`
   display: flex;
   min-height: calc(100vh - 70px);
   justify-content: center;
   align-items: center;
-  background: ${Theme.colors.blueLight};
-  animation: ${Animations.Fade} 0.7s;
+  background: ${theme.colors.blueLight};
+  animation: ${animations.Fade} 0.7s;
 `
 
 export const Form = Styled.form`
@@ -19,15 +19,15 @@ export const LogoutContainer = Styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: ${Theme.colors.white};
+  background: ${theme.colors.white};
   border-radius: 4px;
   padding: 45px 40px;
   box-shadow: 8px 8px
-    ${Color(Theme.colors.primary)
+    ${Color(theme.colors.primary)
       .alpha(0.18)
       .string()};
   border: solid 1px
-    ${Color(Theme.colors.primary)
+    ${Color(theme.colors.primary)
       .alpha(0.18)
       .string()};
 `

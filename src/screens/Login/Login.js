@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { useManageForm } from '../../../../hooks'
+import { useManageForm } from '../../hooks'
 // components
 import { AuthContainer } from '../../containers/AuthContainer'
-import { Field } from '../../../core/components/Forms/Field'
-import { Button } from '../../../core/components/Forms/Button'
-import { Title } from '../../../core/components/Title'
-import Image from './../../../../images/login.svg'
+import { Field } from '../../components/Forms/Field'
+import { Button } from '../../components/Forms/Button'
+import { Title } from '../../components/Title'
+
 // Action
-import { login } from '../../../../store/actions'
+import { login } from '../../store/actions'
 // Styles
-import { Common } from '../../../../styles'
+import { Common } from '../../styles'
 import { LoginTitle } from './Style'
 import { Container, Row, Col } from 'reactstrap'
 
@@ -26,7 +26,7 @@ const Login = ({ login }) => {
   const { emailOrUsername, password } = data
 
   return (
-    <AuthContainer img={Image}>
+    <AuthContainer>
       <form onSubmit={e => onSubmit(e)}>
         <Container fluid={true}>
           <Row>

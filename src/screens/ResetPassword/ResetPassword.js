@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { useManageForm } from '../../../../hooks'
+import { useManageForm } from '../../hooks'
 // Components
 import { ForgotPassContainer } from '../../containers/ForgotPassContainer'
-import { Field } from '../../../core/components/Forms/Field'
-import { Button } from '../../../core/components/Forms/Button'
-import { Spinner } from '../../../core/components/Spinner'
-import { User, Picture, Name, UserName, Text } from './Style'
+import { Field } from '../../components/Forms/Field'
+import { Button } from '../../components/Forms/Button'
+import { Spinner } from '../../components/Spinner'
+import { Col, Row } from 'reactstrap'
 // Actions
-import { forgotPassIsExpire, resetPassword } from '../../../../store/actions'
+import { forgotPassIsExpire, resetPassword } from '../../store/actions'
 
 const ResetPassword = ({
   forgotPassIsExpire,
@@ -33,31 +33,14 @@ const ResetPassword = ({
     },
   })
   const { password, newPassword } = data
-  const { resetPassword: resetPasswordData } = auth
-  const user = resetPasswordData ? resetPasswordData.user : null
+  const { resetPassword: check } = auth
 
-  return !user ? (
+  return !check && !check.status ? (
     <Spinner />
   ) : (
     <ForgotPassContainer title="Reset your password.">
       <form onSubmit={e => onSubmit(e)}>
-        <div className="row">
-          <div className="col-12">
-            <User>
-              <Picture image={user.picture.url} />
-              <div>
-                <Name>
-                  {user.name} {user.lastname}
-                </Name>
-                <UserName>@{user.username}</UserName>
-              </div>
-            </User>
-
-            <Text>
-              Strong passwords include numbers, letters, and punctuation marks.
-            </Text>
-          </div>
-
+        <Row>
           <Field
             type="password"
             placeholder="Type your new password"
@@ -77,13 +60,12 @@ const ResetPassword = ({
           >
             {validator.message('newPassword', newPassword, 'required|min:6')}
           </Field>
-
-          <div className="col-12 d-flex justify-content-end mt-4">
+          <Col xs={12} className="d-flex justify-content-end mt-4">
             <Button type="submit" disabled={!isValid}>
               Reset
             </Button>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </form>
     </ForgotPassContainer>
   )
