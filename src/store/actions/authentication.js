@@ -2,7 +2,7 @@ import { verifyTokenAndGetUser } from '../../utils/jwt'
 import { AuthService } from '../../services'
 
 import { alert } from './setAlert'
-import { types } from '../types'
+import { authentication as authenticationTypes } from '../types'
 
 const {
   LOGIN_FAIL,
@@ -18,7 +18,7 @@ const {
   RESET_PASSWORD_GET_USER_FAIL,
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAIL,
-} = types
+} = authenticationTypes
 
 // Signup
 export const signup = user => async dispatch => {

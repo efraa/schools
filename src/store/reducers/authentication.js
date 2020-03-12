@@ -1,5 +1,5 @@
 // import { generateToken } from '../../utils/jwt'
-import { types } from '../types'
+import { authentication } from '../types'
 const {
   LOADED,
   LOGIN_SUCCESS,
@@ -12,7 +12,7 @@ const {
   FORGOT_PASSWORD_SUCCESS,
   RESET_PASSWORD_GET_USER_SUCCESS,
   FORGOT_PASSWORD_FAIL,
-} = types
+} = authentication
 
 const initialState = {
   token: localStorage.getItem('token'),

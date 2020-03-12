@@ -1,7 +1,2 @@
-import { authentication } from './authenticationTypes'
-import { basics } from './basicTypes'
-
-export const types = {
-  ...authentication,
-  ...basics,
-}
+export { authentication } from './authenticationTypes'
+export { basics } from './basicTypes'
