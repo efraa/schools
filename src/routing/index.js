@@ -14,20 +14,19 @@ export const routes = [
   // Others routes
 ]
 
-const Routing = ({ isAuth, loading }) =>
-  !loading && (
-    <Suspense fallback={<Spinner />}>
-      <Switch>
-        {routes.map(({ isProtected, ...props }, key) =>
-          isProtected ? (
-            <PrivateRoute key={key} isAuth={isAuth} {...props} />
-          ) : (
-            <PublicRoute key={key} isAuth={isAuth} {...props} />
-          )
-        )}
-      </Switch>
-    </Suspense>
-  )
+const Routing = ({ isAuth }) => (
+  <Suspense fallback={<Spinner />}>
+    <Switch>
+      {routes.map(({ isProtected, ...props }, key) =>
+        isProtected ? (
+          <PrivateRoute key={key} isAuth={isAuth} {...props} />
+        ) : (
+          <PublicRoute key={key} isAuth={isAuth} {...props} />
+        )
+      )}
+    </Switch>
+  </Suspense>
+)
 
 const mapStateToProps = state => ({
   isAuth: state.auth.isAuth,
