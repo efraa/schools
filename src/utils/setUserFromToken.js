@@ -5,8 +5,7 @@ import { store } from '../store'
 
 // Actions
 import { setUser } from '../store/actions/authentication'
-import { types } from '../store/types'
-const { LOADED, LOGOUT } = types
+import { authentication, basics } from '../store/types'
 
 export const setUserFromToken = async () => {
   try {
@@ -16,8 +15,8 @@ export const setUserFromToken = async () => {
       // Decode token and get user info and exp
       const user = await verifyTokenAndGetUser(token)
       if (user) store.dispatch(setUser(user))
-    } else store.dispatch({ type: LOADED })
+    } else store.dispatch({ type: basics.LOADED })
   } catch (err) {
-    store.dispatch({ type: LOGOUT })
+    store.dispatch({ type: authentication.LOGOUT })
   }
 }
