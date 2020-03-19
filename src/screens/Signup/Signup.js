@@ -17,10 +17,11 @@ const Signup = ({ signup }) => {
       username: '',
       email: '',
       password: '',
+      role: 'school',
     },
     connect: signup,
   })
-  const { username, email, password } = data
+  const { name, username, email, password } = data
 
   return (
     <AuthContainer>
@@ -30,6 +31,15 @@ const Signup = ({ signup }) => {
             <Col xs={12}>
               <Title text="Sign up as a school account." />
             </Col>
+
+            <Field
+              placeholder="Organization name"
+              value={name}
+              name="name"
+              onChange={e => onChange(e)}
+            >
+              {validator.message('name', name, 'required|alpha_space')}
+            </Field>
 
             <Field
               placeholder="Email address"
