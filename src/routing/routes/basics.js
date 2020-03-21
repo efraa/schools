@@ -9,5 +9,6 @@ export const basicsRoutes = [
     component: Home,
     exact: true,
     isProtected: true,
+    title: 'Home',
   },
 ]
